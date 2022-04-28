@@ -2,6 +2,7 @@
 
 namespace App\Console;
 
+use App\Console\Commands\ImagesFilesCommand;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
@@ -13,18 +14,20 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-        //
+        ImagesFilesCommand::class
     ];
 
     /**
      * Define the application's command schedule.
      *
-     * @param  \Illuminate\Console\Scheduling\Schedule  $schedule
+     * @param  Schedule  $schedule
      * @return void
      */
     protected function schedule(Schedule $schedule)
     {
-        // $schedule->command('inspire')->hourly();
+//        $schedule->command(ImagesFilesCommand::class)->twiceDaily(7, 18);
+        $schedule->command(ImagesFilesCommand::class)->everyTwoHours()->between('8:00', '18:00');;
+
     }
 
     /**

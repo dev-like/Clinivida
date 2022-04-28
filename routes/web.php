@@ -1,5 +1,12 @@
 <?php
 
+use AdminController;
+use BannerController;
+use HomeController;
+use QuemSomosController;
+use UserController;
+use ParceirosController;
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +20,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', [HomeController::class, 'index'])->name('site');
+
+
+Route::prefix('/admin')->middleware(['auth'])->group(function () {
+    Route::get('', [AdminController::class, 'index']);
+    Route::resource('banners', BannerController::class)->except(['show', 'create']);
+    Route::resource('quemSomos', QuemSomosController::class)->only(['index', 'update']);
+
+    Route::resource('parceiros', ParceirosController::class)->except(['show', 'create']);
+    Route::resource('users', UserController::class)->except(['show', 'create']);
+    Route::put('users/password/{user}', [UserController::class, 'updatePassword'])->name('users.updatePassword');
 });
+
+require __DIR__.'/auth.php';
