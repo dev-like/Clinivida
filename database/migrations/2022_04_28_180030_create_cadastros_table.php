@@ -18,7 +18,7 @@ class CreateCadastrosTable extends Migration
             $table->string('nome');
             $table->string('especialidade')->nullable();
             $table->string('descricao');
-            $table->string('foto');
+            $table->string('image');
             $table->string('tipo');
             $table->timestamps();
             $table->softDeletes();

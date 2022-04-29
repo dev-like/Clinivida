@@ -21,6 +21,21 @@ convenios<div class="left side-menu">
                         <i class="fa fa-handshake-o"></i> <span> Convenios </span>
                     </a>
                 </li>
+                <li>
+                    <a href="{{ route('especialidades.index') }}">
+                        <i class="fa fa-graduation-cap"></i> <span> Especialidades </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ route('exames.index') }}">
+                        <i class="fa fa-user-md"></i> <span> Exames </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ route('equipes.index') }}">
+                        <i class="fa fa-users"></i> <span> Equipes </span>
+                    </a>
+                </li>
 
 
 

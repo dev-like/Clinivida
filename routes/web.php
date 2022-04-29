@@ -7,6 +7,10 @@ use App\Http\Controllers\QuemSomosController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ConveniosController;
 
+use App\Http\Controllers\EspecialidadesController;
+use App\Http\Controllers\ExamesController;
+use App\Http\Controllers\EquipesController;
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -29,6 +33,11 @@ Route::prefix('/admin')->middleware(['auth'])->group(function () {
     Route::resource('quemSomos', QuemSomosController::class)->only(['index', 'update']);
 
     Route::resource('convenios', ConveniosController::class)->except(['show', 'create']);
+
+    Route::resource('especialidades', EspecialidadesController::class)->except(['show', 'create']);
+    Route::resource('exames', ExamesController::class)->except(['show', 'create']);
+    Route::resource('equipes', EquipesController::class)->except(['show', 'create']);
+
     Route::resource('users', UserController::class)->except(['show', 'create']);
     Route::put('users/password/{user}', [UserController::class, 'updatePassword'])->name('users.updatePassword');
 });
