@@ -5,7 +5,11 @@ namespace App\Http\Controllers;
 use App\Models\Banner;
 use App\Models\Convenios;
 use App\Models\Quemsomos;
+
 use App\Models\Especialidade;
+use App\Models\Exame;
+use App\Models\Equipe;
+
 use DB;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
@@ -25,13 +29,15 @@ class HomeController extends Controller
         $description = Banner::first()?->sub_title ;
         $quemsomos = QuemSomos::first();
         $convenios = Convenios::all();
-        $especialidade = Especialidade::where('tipo','=','especialidades')->get();
+        $especialidades = Especialidade::where('tipo','=','especialidades')->get();
+        $exames = Exame::where('tipo','=','exames')->get();
+        $equipes = Equipe::where('tipo','=','equipes')->get();
         // $eventosRelacionados = Eventos::where('categoria_id', $evento->categoria_id)->where('slug','<>', $slug)->limit(2)->get()->load('categoria');
         // $eventos = Eventos::all()->load('categoria');
         // $instagram = Instagram::all();
 
         // return view('index',compact('banner', 'quemSomos','eventos','convenios','instagram','description'));
-        return view('index',compact('banners', 'quemsomos','description', 'especialidade'));
+        return view('index',compact('banners', 'quemsomos','description', 'especialidades', 'exames', 'equipes', 'convenios'));
         // return view('index');
 
 }

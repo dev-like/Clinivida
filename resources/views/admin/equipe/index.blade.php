@@ -94,7 +94,7 @@
                         <div class="row">
                             <div class="form-group col-md-12">
                                 <input type="file" name="image" id="image" class="filestyle"
-                                       data-buttonText="Carregar" data-placeholder="Resolução ideal 1920 x 1080"
+                                       data-buttonText="Carregar" data-placeholder="Resolução ideal 270 x 262"
                                        data-btnClass="btn-light" required accept="image/*">
                             </div>
                             <div class="form-group col-md-6">
