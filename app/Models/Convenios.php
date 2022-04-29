@@ -9,9 +9,9 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Storage;
 
-class Parceiros extends Model
+class Convenios extends Model
 {
-    public const PATH_ANEXO = 'uploads/parceiros';
+    public const PATH_ANEXO = 'uploads/convenios';
 
     use HasFactory;
     use SoftDeletes;
@@ -19,7 +19,7 @@ class Parceiros extends Model
     protected $fillable = [
         'id',
         'logo',
-        'tipo_servico',
+        'link',
     ];
 
     /**
@@ -29,7 +29,7 @@ class Parceiros extends Model
     {
         if ($this->logo) {
             Storage::disk('public_upload')
-                ->delete(sprintf('%s/%s', 'parceiros', $this->logo));
+                ->delete(sprintf('%s/%s', 'convenios', $this->logo));
         }
         $this->attributes['logo'] = $value
             ->move(
@@ -45,9 +45,9 @@ class Parceiros extends Model
     {
         parent::boot();
 
-        $deleteCallback = function ($parceiro) {
+        $deleteCallback = function ($convenio) {
             Storage::disk('public_upload')
-                ->delete(sprintf('%s%s', 'parceiros/', $parceiro->logo));
+                ->delete(sprintf('%s%s', 'convenios/', $convenio->logo));
         };
         static::deleting($deleteCallback);
     }

@@ -1,11 +1,11 @@
 @extends('admin.main')
 
 @section('page-title')
-    Parceiros Cadastrados
+    Convenios Cadastrados
 @endsection
 
 @section('page-caminho')
-    Parceiros
+    Convenios
 @endsection
 
 @section('styles')
@@ -26,28 +26,32 @@
                 <tr>
                     <th>Id</th>
                     <th>Logo</th>
-                    <th>Tipo Serviço</th>
+                    <th>Link</th>
                     <th>Ações</th>
                 </tr>
                 </thead>
                 <tbody id="banner">
-                @forelse($parceiros as $parceiro)
-                    <tr id={{$parceiro->id}}>
+                @forelse($convenios as $convenio)
+
+                    <tr id={{$convenio->id}}>
                         <td width="1%">
-                            {{ $parceiro->id }}
+                            {{ $convenio->id }}
                         </td>
                         <td width="15%">
-                            <img width="400px" src="{{ asset('uploads/parceiros/'.$parceiro->logo) }}">
+                            <img width="80px" src="{{ asset('uploads/convenios/'.$convenio->logo) }}">
+                        </td>
+                        <td width="30%">
+                            {{ $convenio->link }}
                         </td>
                         <td width="10%">
-                            <span class="hint--top" aria-label="Editar parceiro">
-                                <a href="{{ route('parceiros.edit', $parceiro->id) }}" style="border-radius: 50%"
+                            <span class="hint--top" aria-label="Editar convenio">
+                                <a href="{{ route('convenios.edit', $convenio->id) }}" style="border-radius: 50%"
                                    class="btn btn-warning waves-effect">
                                     <i class="fa fa-pencil m-r-5"></i>
                                 </a>
                             </span>
-                            <span class="hint--top" aria-label="Deletar parceiro">
-                                <button type="button" onclick="goswet({{$parceiro->id}})"
+                            <span class="hint--top" aria-label="Deletar convenio">
+                                <button type="button" onclick="goswet({{$convenio->id}})"
                                         style="border-radius: 50%"
                                         class="btn btn-danger waves-effect">
                                     <i class="fa fa-trash m-r-5"></i>
@@ -73,21 +77,27 @@
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
-                    <h4 class="modal-title">Cadastrar Parceiros</h4>
+                    <h4 class="modal-title">Cadastrar Convenios</h4>
                 </div>
                 <form enctype="multipart/form-data"
-                      action="{{ route('parceiros.store') }}"
+                      action="{{ route('convenios.store') }}"
                       class="form"
                       method="post">
                     {{ csrf_field() }}
                     <div class="modal-body">
                         <div class="row">
                             <div class="form-group col-md-12">
-                                <input type="file" name="logo" id="logo" class="filestyle"
-                                       data-buttonText="Carregar" data-placeholder="Resolução ideal"
-                                       data-btnClass="btn-light" required>
+                              <input type="file" name="logo" id="logo" class="filestyle"
+                                     data-buttonText="Carregar" data-placeholder="Resolução ideal 270 x 282"
+                                     data-btnClass="btn-light" required>
                             </div>
-                            
+                            <div class="form-group col-md-12">
+                             <label for="link">Link:</label>
+                             <input placeholder="Link do convênio" name="link"
+                                    class="form-control" autofocus required
+                                    maxlength="250" type="url">
+                            </div>
+
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -136,7 +146,7 @@
       reverseButtons: true
     })
     swal({
-        title: "Deseja excluir Parceiro?",
+        title: "Deseja excluir Convenio?",
         type: "warning",
         showCancelButton: true,
         confirmButtonColor: "#DD6B55",
@@ -146,14 +156,14 @@
       function(){
         $.ajax({
           type: "DELETE",
-          url: "{{ url('admin/parceiros') }}/"+id,
+          url: "{{ url('admin/convenios') }}/"+id,
           data: {
              'id': id,
              _token: $("[name='_token']").val(),
           },
           success: function(data){
             swal({
-             title: "Parceiro deletado!",
+             title: "Convenio deletado!",
              type: "success",
              timer: 2000,
              showConfirmButton: false
@@ -161,7 +171,7 @@
            function(){
              },
              function(){
-               window.location = "{{ route('parceiros.index') }}";
+               window.location = "{{ route('convenios.index') }}";
              }
            );
           },

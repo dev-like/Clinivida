@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Banner;
 use App\Models\Eventos;
-use App\Models\Parceiros;
+use App\Models\Convenios;
 use App\Models\Instagram;
 use App\Models\Quemsomos;
 use App\Models\Cliente;
@@ -28,10 +28,10 @@ class HomeController extends Controller
         // $description = Banner::first()?->sub_title ;
         // $quemSomos = QuemSomos::first();
         // $eventos = Eventos::all()->load('categoria');
-        // $parceiros = Parceiros::all();
+        // $convenios = Convenios::all();
         // $instagram = Instagram::all();
 
-        // return view('index',compact('banner', 'quemSomos','eventos','parceiros','instagram','description'));
+        // return view('index',compact('banner', 'quemSomos','eventos','convenios','instagram','description'));
         return view('index');
 }
 

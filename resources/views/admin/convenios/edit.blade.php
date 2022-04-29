@@ -1,11 +1,11 @@
 @extends('admin.main')
 
 @section('page-title')
-    Editar parceiro {{ $parceiro->id }}
+    Editar convenio {{ $convenio->id }}
 @endsection
 
 @section('page-caminho')
-    Parceiro
+    Convenio
 @endsection
 
 @section('styles')
@@ -17,7 +17,7 @@
     <div class="col-12">
         <div class="card-box">
             <form enctype="multipart/form-data"
-                  action="{{ route('parceiros.update', ['parceiro' => $parceiro->id])}}"
+                  action="{{ route('convenios.update', ['convenio' => $convenio->id])}}"
                   class="form"
                   method="POST">
                 {{ csrf_field() }}
@@ -26,21 +26,19 @@
                 <div class="modal-body">
                     <div class="row">
                         <div class="form-group col-md-12">
-                            <img width="400px" src="{{ asset('uploads/parceiros/'.$parceiro->logo) }}">
+                            <img id="view-img" width="400px" src="{{ asset('uploads/convenios/'.$convenio->logo) }}">
                         </div>
                         <div class="form-group col-md-12">
                             <input type="file" name="logo" id="logo" class="filestyle"
                                    data-buttonText="Carregar"
                                    data-btnClass="btn-light"
-                                   data-placeholder="{!! $parceiro->logo !!}">
+                                   data-placeholder="{!! $convenio->logo !!}">
                         </div>
                         <div class="form-group col-md-6">
-                            <label for="title">Tipo Serviço:</label>
-                            <select name="tipo_servico" id="tipo_servico" class="form-control" required>
-                                <option  value="" disabled>Selecione uma opção</option>
-                                <option {!! $parceiro->tipo_servico == 'sementes' ? 'selected' : '' !!} value="sementes">Sementes</option>
-                                <option {{ $parceiro->tipo_servico == 'irrigacao' ? 'selected' : '' }} value="irrigacao">Irrigação</option>
-                            </select>
+                          <label for="link">Link:</label>
+                          <input placeholder="Link do convênio" name="link"
+                                 class="form-control" autofocus required
+                                 maxlength="250" type="url" value="{{ $convenio->link }}">
                         </div>
                     </div>
                 </div>
@@ -52,7 +50,7 @@
                                     <i class="fa fa-save m-r-5"></i>
                                     Salvar
                                 </button>
-                                <a href="{{ route('parceiros.index') }}" class="btn btn-danger" data-dismiss="modal">
+                                <a href="{{ route('convenios.index') }}" class="btn btn-danger" data-dismiss="modal">
                                     <i class="fa fa-window-close m-r-5"></i>
                                     Cancelar
                                 </a>
@@ -67,6 +65,20 @@
 @endsection
 
 @section('scripts')
+
+    <script>
+    $("#logo").change(function(){
+    if (this.files && this.files[0]) {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+            $('#view-img').attr('src', e.target.result);
+        }
+        reader.readAsDataURL(this.files[0]);
+    }
+    });
+    </script>
+
     <script src="{{ asset('template/plugins/bootstrap-filestyle/js/bootstrap-filestyle.min.js') }}"
             type="text/javascript"></script>
     <script src="{{ asset('template/plugins/switchery/switchery.min.js') }}" type="text/javascript"></script>

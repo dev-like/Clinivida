@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Parceiros;
+use App\Models\Convenios;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
@@ -10,15 +10,15 @@ use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Validation\ValidationException;
 
-class ParceirosController extends Controller
+class ConveniosController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $parceiros = Parceiros::all();
-        return view('admin.parceiros.index', compact('parceiros'));
+        $convenios = Convenios::all();
+        return view('admin.convenios.index', compact('convenios'));
     }
 
     /**
@@ -30,49 +30,54 @@ class ParceirosController extends Controller
      */
     public function store(Request $request): RedirectResponse
     {
+      //dd($request);
         $this->validate($request, [
             'logo' => 'required|image',
+            'link' => 'required',
         ]);
-        Parceiros::create($request->all());
-        return back()->with('success', 'Parceido cadastrado com sucesso');
+        Convenios::create($request->all());
+        return back()->with('success', 'Convenio cadastrado com sucesso!');
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  Parceiros  $parceiro
+     * @param  Convenios  $convenio
      * @return Application|Factory|View
      */
-    public function edit(Parceiros $parceiro)
+    public function edit(Convenios $convenio)
     {
-        return view('admin.parceiros.edit', compact('parceiro'));
+      //dd($convenio);
+        return view('admin.convenios.edit', compact('convenio'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  Request  $request
-     * @param  Parceiros  $parceiro
+     * @param  Convenios  $convenio
      * @return RedirectResponse
      * @throws ValidationException
      */
-    public function update(Request $request, Parceiros $parceiro)
+    public function update(Request $request, Convenios $convenio)
     {
+
         $this->validate($request, [
             'logo' => 'sometimes|required|image',
+            'link' => 'required'
         ]);
-        $parceiro->update($request->all());
-        return redirect()->route('parceiros.index')->with('success', 'Parceido cadastrado com sucesso');
+        $convenio->update($request->all());
+        return redirect()->route('convenios.index')->with('success', 'Parceido cadastrado com sucesso');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  Parceiros  $parceiro
+     * @param  Convenios  $convenio
      * @return bool
      */
-    public function destroy(Parceiros $parceiro)
+    public function destroy(Convenios $convenio)
     {
-        return $parceiro->delete();
+        return $convenio->delete();
     }
 }

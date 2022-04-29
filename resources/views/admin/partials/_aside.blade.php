@@ -1,4 +1,4 @@
-<div class="left side-menu">
+convenios<div class="left side-menu">
     <div class="slimscroll-menu" id="remove-scroll">
         <!--- Sidemenu -->
         <div id="sidebar-menu">
@@ -17,8 +17,8 @@
                     </a>
                 </li>
                 <li>
-                    <a href="{{ route('parceiros.index') }}">
-                        <i class="fa fa-handshake-o"></i> <span> Parceiros </span>
+                    <a href="{{ route('convenios.index') }}">
+                        <i class="fa fa-handshake-o"></i> <span> Convenios </span>
                     </a>
                 </li>
 
@@ -33,7 +33,7 @@
                     </a>
                 </li>
                 @endif
-                
+
             </ul>
         </div>
         <!-- Sidebar -->

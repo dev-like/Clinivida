@@ -5,7 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\BannerController;
 use App\Http\Controllers\QuemSomosController;
 use App\Http\Controllers\UserController;
-use App\Http\Controllers\ParceirosController;
+use App\Http\Controllers\ConveniosController;
 
 use Illuminate\Support\Facades\Route;
 
@@ -28,7 +28,7 @@ Route::prefix('/admin')->middleware(['auth'])->group(function () {
     Route::resource('banners', BannerController::class)->except(['show', 'create']);
     Route::resource('quemSomos', QuemSomosController::class)->only(['index', 'update']);
 
-    Route::resource('parceiros', ParceirosController::class)->except(['show', 'create']);
+    Route::resource('convenios', ConveniosController::class)->except(['show', 'create']);
     Route::resource('users', UserController::class)->except(['show', 'create']);
     Route::put('users/password/{user}', [UserController::class, 'updatePassword'])->name('users.updatePassword');
 });

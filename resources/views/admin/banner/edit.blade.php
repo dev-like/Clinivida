@@ -25,7 +25,7 @@
                 <div class="modal-body">
                     <div class="row">
                         <div class="form-group col-md-12">
-                            <img width="400px" src="{{ asset('uploads/banners/'.$banner->image) }}">
+                            <img id="view-img" width="400px" src="{{ asset('uploads/banners/'.$banner->image) }}">
                         </div>
                         <div class="form-group col-md-12">
                             <input type="file" name="image" id="image" class="filestyle"
@@ -86,6 +86,20 @@
 @endsection
 
 @section('scripts')
+
+    <script>
+    $("#image").change(function(){
+    if (this.files && this.files[0]) {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+            $('#view-img').attr('src', e.target.result);
+        }
+        reader.readAsDataURL(this.files[0]);
+    }
+    });
+    </script>
+
     <script src="{{ asset('template/plugins/bootstrap-filestyle/js/bootstrap-filestyle.min.js') }}"
             type="text/javascript"></script>
     <script src="{{ asset('template/plugins/switchery/switchery.min.js') }}" type="text/javascript"></script>
