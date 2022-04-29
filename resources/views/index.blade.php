@@ -5,8 +5,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ibn Sino Html-5 Template | Home-1</title>
-    <link rel="icon" href="../site/images/icon.png">
+    <title>Clinivida - A sua saúde tratada com respeito!</title>
+    <link rel="shortcut icon" href="{{ asset('template/images/favicon/favicon.ico') }}">
 
     <!-- wow animation style -->
     <!-- <link rel="stylesheet" href="./css/animate.css"> -->
@@ -54,9 +54,10 @@
                                 d="M831.817,365.478a10.864,10.864,0,0,0-10.852-10.851v-1.55a12.416,12.416,0,0,1,12.4,12.4h-1.551Zm-6.2,0a4.656,4.656,0,0,0-4.651-4.651v-1.55a6.208,6.208,0,0,1,6.2,6.2h-1.55Zm-4.651-9.3a9.312,9.312,0,0,1,9.3,9.3h-1.551a7.759,7.759,0,0,0-7.751-7.751v-1.55Zm3.779,13.4,1.938-1.937a0.578,0.578,0,0,1,.064-0.058,1.924,1.924,0,0,1,2.511-.006,0.72,0.72,0,0,1,.071.064l3.488,3.487a1.871,1.871,0,0,1,0,2.646l-2.325,2.326a5.527,5.527,0,0,1-3.942,1.314c-3.14,0-7.446-1.609-11.712-5.8l0.41-.418-0.417.41a19.929,19.929,0,0,1-5.5-9.163c-0.666-2.764-.288-5.19,1.01-6.489l2.325-2.325a1.917,1.917,0,0,1,2.647,0l3.488,3.488a0.8,0.8,0,0,1,.067.077,1.879,1.879,0,0,1-.009,2.5c-0.018.022-.038,0.043-0.058,0.064l-1.938,1.937a1.419,1.419,0,0,0,0,2l2.938,2.937h0l2.94,2.94A1.42,1.42,0,0,0,824.744,369.578Zm6.522,3.554,0.454-.454a0.322,0.322,0,0,0,0-.454l-3.434-3.433c-0.017-.015-0.034-0.029-0.049-0.045a0.277,0.277,0,0,0-.464,0c-0.015.014-.03,0.029-0.046,0.042l-0.4.4ZM817.25,359.116l0.4-.4a0.447,0.447,0,0,1,.042-0.045,0.328,0.328,0,0,0,0-.464,0.652,0.652,0,0,1-.05-0.055l-3.429-3.429a0.323,0.323,0,0,0-.455,0l-0.454.454Zm1.456,8.621h0l-2.94-2.94a2.97,2.97,0,0,1,0-4.2l0.388-.388-3.943-3.941-0.775.774c-0.9.9-1.129,2.827-.6,5.029A20.532,20.532,0,0,0,824.366,375.6c2.2,0.531,4.129.3,5.029-.6l0.775-.775-3.942-3.942-0.388.388a2.971,2.971,0,0,1-4.2,0Z"
                                 transform="translate(-809 -353.063)" /></svg>
                         <div class="header-top__call-text">
-                            <p>Call us for any question</p>
-                            <a href="tel:+1 800 456 7890">+1 800 456 7890</a>
-                        </div>
+
+                            <a href="tel:{!! !empty($quemsomos->telefone) ? '$quemsomos->telefone' : '(99) 99160-1011' !!}">{!! !empty($quemsomos->telefone) ? '$quemsomos->telefone' : '(99) 99160-1011' !!}</a>
+                            <a href="tel:{!! !empty($quemsomos->telefone2) ? '$quemsomos->telefone2' : '(99) 3071-2081' !!}">{!! !empty($quemsomos->telefone2) ? '$quemsomos->telefone2' : '(99) 3071-2081' !!}</a>
+                      </div>
                     </div>
 
                     <div class="header-top__call-item">
@@ -65,8 +66,8 @@
                                 d="M1033.75,377.71l-7.99-11.282a9.433,9.433,0,1,1,16-.04Zm0-24.133a7.845,7.845,0,0,0-6.68,11.983l6.68,9.43,6.7-9.468A7.841,7.841,0,0,0,1033.75,353.577Zm0,11.78a3.927,3.927,0,1,1,3.93-3.928A3.931,3.931,0,0,1,1033.75,365.357Zm0-6.283a2.356,2.356,0,1,0,2.36,2.355A2.362,2.362,0,0,0,1033.75,359.074Z"
                                 transform="translate(-1024.31 -352)" /></svg>
                         <div class="header-top__call-text">
-                            <p>27 Princess Road 32112</p>
-                            <a href="">New York</a>
+                            <p{!! !empty($quemsomos->endereco_matriz) ? '$quemsomos->endereco_matriz' : 'Rua Alagoas, 198 - Juçara - Imperatriz' !!}</p>
+
                         </div>
                     </div>
                     <!-- End of .header-top__call-item -->
@@ -78,8 +79,7 @@
                                 d="M1239.84,377.423v-16.85l3.15-2.723v-5.556h18.87v5.556l3.14,2.723v16.85h-25.16Zm22.48-1.57-6.57-6.557-3.33,2.884-3.33-2.884-6.56,6.557h19.79Zm-20.91-1.11,6.49-6.478-6.49-5.614v12.092Zm1.58-14.814-1.16,1,1.16,1v-2.005Zm17.29,3.359v-9.424h-15.72v9.424h-0.01l7.87,6.813,7.87-6.813h-0.01Zm1.58-3.359v2.005l1.15-1Zm1.57,2.722-6.49,5.614,6.49,6.478V362.651Zm-11.8-4.076h1.58v1.571h-1.58v-1.571Zm4.72,1.571h-1.57v-1.571h1.57v1.571Zm-7.86-1.571h1.57v1.571h-1.57v-1.571Z"
                                 transform="translate(-1239.84 -352.281)" /> </svg>
                         <div class="header-top__call-text">
-                            <p>Office Hour: 09:00am - 04:00pm</p>
-                            <a href="mailto:inbox@medihelp.com">inbox@medihelp.com</a>
+                            <a href="mailto:{!! !empty($quemsomos->email) ? '$quemsomos->email' : 'contato@clinividaitz.com.br' !!}">{!! !empty($quemsomos->email) ? '$quemsomos->email' : 'contato@clinividaitz.com.br' !!}</a>
                         </div>
                     </div>
                     <!-- End of .header-top__call-item -->
@@ -97,17 +97,7 @@
                 <!-- hidden navbar for mobiles -->
                 <div class="navbar-logo">
                     <a href="{{url("/")}}">
-                        <svg id="logo-white.svg" width="116.09" height="39" viewBox="0 0 116.09 39">
-                            <path class="cls-1"
-                                d="M1045.89,144.338l5.7-9.565,5.87,8.679,5.87-8.856,5.87,9.742,7.83,0.176s-3.69,9.734-19.57,19.485c0,0-9.61-5.766-14.95-12.575h4.81a69.279,69.279,0,0,0,10.14,8.146s8.41-5.393,12.81-11.336h-3.38l-3.74-6.376-5.69,8.5-5.7-8.5-3.73,6.376h-8.01s-9.48-12.717,2.67-21.43c7.78-4.687,14.59,1.239,14.59,1.239s6.41-5.146,13.88-1.948,7.96,12.345,6.94,15.231h-3.74s2.4-9.573-5.87-12.22a10.836,10.836,0,0,0-10.85,3.365s-4.05-4.127-9.26-3.72-11.16,5.969-6.58,15.587h4.09Z"
-                                transform="translate(-1036.5 -125)" />
-                            <path id="IBNSINO" class="cls-3"
-                                d="M1087.12,153.436h3.08V133.848h-3.08v19.588Zm9.96-19.588h-4.64v19.588h4.84c3.08,0,4.67-1.623,4.67-4.645V147.2c0-2.071-.64-3.526-2.29-4.17V142.97c1.37-.643,1.99-1.9,1.99-3.917v-0.7C1101.65,135.331,1100.27,133.848,1097.08,133.848Zm-0.19,10.773c1.4,0,1.98.56,1.98,2.379v1.707c0,1.455-.55,1.931-1.59,1.931h-1.76v-6.017h1.37Zm0.11-7.975c1.09,0,1.57.616,1.57,2.015v1.091c0,1.567-.7,2.071-1.85,2.071h-1.2v-5.177H1097Zm13.38,16.79h3.16V133.848h-2.74v11.725h-0.05l-3.11-11.725h-3.86v19.588h2.77V139.249h0.05Z"
-                                transform="translate(-1036.5 -125)" />
-                            <path id="IBNSINO_copy" data-name="IBNSINO copy" class="cls-1"
-                                d="M1115.37,138.549c0,2.239.81,3.862,3.39,6.128,2.01,1.763,2.63,2.827,2.63,4.254,0,1.4-.62,1.9-1.6,1.9s-1.59-.5-1.59-1.9v-1.4h-2.91v1.2c0,3.134,1.56,4.925,4.59,4.925s4.58-1.791,4.58-4.925c0-2.239-.81-3.862-3.38-6.128-2.02-1.763-2.63-2.827-2.63-4.254,0-1.4.56-1.93,1.54-1.93s1.54,0.531,1.54,1.93v0.812h2.91v-0.616c0-3.134-1.54-4.925-4.54-4.925S1115.37,135.415,1115.37,138.549Zm10.86,14.887h3.08V133.848h-3.08v19.588Zm11.9,0h3.16V133.848h-2.74v11.725h-0.06l-3.1-11.725h-3.86v19.588h2.77V139.249h0.05Zm8.21-15.083c0-1.4.61-1.93,1.59-1.93s1.6,0.531,1.6,1.93v10.578c0,1.4-.62,1.93-1.6,1.93s-1.59-.531-1.59-1.93V138.353Zm-3.08,10.382c0,3.134,1.65,4.925,4.67,4.925s4.67-1.791,4.67-4.925V138.549c0-3.134-1.65-4.925-4.67-4.925s-4.67,1.791-4.67,4.925v10.186Z"
-                                transform="translate(-1036.5 -125)" />
-                        </svg>
+                        <img src="../site/images/logo.png" />
                     </a>
                 </div>
 
@@ -130,40 +120,7 @@
                             <a class="navbar__menu-link" href="#">Convênios</a>
 
                         </li>
-                        <li class="navbar__menu-item">
-                            <a class="navbar__menu-link" href="#">Home</a>
 
-                        </li>
-                        <!-- <li class="navbar__menu-item"> -->
-                            <a class="navbar__menu-link" href="#">Pages</a>
-                            <ul class="navbar__submenu">
-                                <li class="navbar__submenu-item">
-                                    <a href="cases-3_columns.html" class="navbar__submenu-link">Cases 3 columns</a>
-                                </li>
-
-                                <li class="navbar__submenu-item">
-                                    <a href="cases-3_columns-2.html" class="navbar__submenu-link">Cases 3 columns 2</a>
-                                </li>
-
-                                <li class="navbar__submenu-item">
-                                    <a href="cases-3_detail.html" class="navbar__submenu-link">Case details</a>
-                                </li>
-
-                                <li class="navbar__submenu-item">
-                                    <a href="doctors-3_columns.html" class="navbar__submenu-link">Doctors 3 columns</a>
-                                </li>
-
-                                <li class="navbar__submenu-item">
-                                    <a href="doctors-single_right.html" class="navbar__submenu-link">Doctor Single page
-                                        right</a>
-                                </li>
-
-                                <li class="navbar__submenu-item">
-                                    <a href="doctors-single_left.html" class="navbar__submenu-link">Doctor Single page
-                                        left</a>
-                                </li>
-                            </ul>
-                        </li>
 
                     </ul>
 
@@ -181,74 +138,19 @@
         <header class="header-bottom">
             <!-- Start of .header-bottom .header-bottom__banner -->
             <div class="header-bottom__banner owl-carousel owl-theme">
-
+              @foreach($banners as $banner)
                 <div class="slide-item">
-                    <img src="../site/images/banner/banner1-1.jpg">
-                    <div class="slide-item__bg">
-                        <div class="icon">
-                            <img src="../site/images/banner/banner-shape.png">
-                        </div>
-                    </div>
+                    <img src="{{ asset('uploads/banners/'. ($banner->image)) }}">
                     <div class="container">
                         <div class="slide-item__block">
-                            <h1 class="slide-item__title">Multidisciplinary <span>Medical<br>Center</span> in new york
+                            <h1 class="slide-item__title">{{$banner->title}} <br><span>{{$banner->sub_title}}</span>
                             </h1>
-                            <h4 class="slide-item__subtitle">30% discount on full examination</h4>
-                            <a href="departments-details_right.html" class="btn btn_blue">BOOK A CONSULTATION</a>
+                            <a href="https://api.whatsapp.com/send?phone=99991601011" class="btn btn_blue">AGENDE SUA CONSULTA</a>
                         </div>
                     </div>
                 </div>
+              @endforeach
 
-                <div class="slide-item">
-                    <img src="../site/images/banner/banner1-2.jpg">
-                    <div class="slide-item__bg">
-                        <div class="icon">
-                            <img src="../site/images/banner/banner-shape.png">
-                        </div>
-                    </div>
-                    <div class="container">
-                        <div class="slide-item__block">
-                            <h1 class="slide-item__title">Multidisciplinary <span>Medical<br>Center</span> in new york
-                            </h1>
-                            <h4 class="slide-item__subtitle">30% discount on full examination</h4>
-                            <a href="#" class="btn btn_blue">BOOK A CONSULTATION</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="slide-item">
-                    <img src="../site/images/banner/banner1-3.jpg">
-                    <div class="slide-item__bg">
-                        <div class="icon">
-                            <img src="../site/images/banner/banner-shape.png">
-                        </div>
-                    </div>
-                    <div class="container">
-                        <div class="slide-item__block">
-                            <h1 class="slide-item__title">Multidisciplinary <span>Medical<br>Center</span> in new york
-                            </h1>
-                            <h4 class="slide-item__subtitle">30% discount on full examination</h4>
-                            <a href="#" class="btn btn_blue">BOOK A CONSULTATION</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="slide-item">
-                    <img src="../site/images/banner/banner1-4.jpg">
-                    <div class="slide-item__bg">
-                        <div class="icon">
-                            <img src="../site/images/banner/banner-shape.png">
-                        </div>
-                    </div>
-                    <div class="container">
-                        <div class="slide-item__block">
-                            <h1 class="slide-item__title">Multidisciplinary <span>Medical<br>Center</span> in new york
-                            </h1>
-                            <h4 class="slide-item__subtitle">30% discount on full examination</h4>
-                            <a href="#" class="btn btn_blue">BOOK A CONSULTATION</a>
-                        </div>
-                    </div>
-                </div>
 
             </div>
             <!--  End of .header-bottom__banner -->
@@ -257,9 +159,8 @@
             <div class="services">
                 <div class="container">
                     <div class="services__items owl-carousel owl-theme">
-
-
                         <div class="services__outer-item">
+                          @foreach($especialidade as $esp)
                             <div class="services__item">
                                 <div class="services__item-icon">
                                     <svg width="53.03" height="44" viewBox="0 0 53.03 44">
@@ -271,49 +172,11 @@
                                 <p class="services__item-text">All analyzes are carried out<br>using modern equipment
                                 </p>
                             </div>
+                          @endforeach
                         </div>
 
-                        <div class="services__outer-item">
-                            <div class="services__item">
-                                <div class="services__item-icon">
-                                    <svg width="50" height="38.03" viewBox="0 0 50 38.03">
-                                        <path id="service-icon4.svg" class="cls-2"
-                                            d="M2737.41,1325.56a1.6,1.6,0,0,1-1.6-1.49c-0.04-.67-0.54-1.54-1.57-3.11-5.75-8.74-12.18-12.8-20.24-12.8a1.59,1.59,0,1,1,0-3.18c9.11,0,16.6,4.65,22.91,14.24,1.21,1.83,2.01,3.14,2.1,4.66a1.59,1.59,0,0,1-1.5,1.68h-0.1Zm-46.81,0h-0.1a1.59,1.59,0,0,1-1.5-1.68c0.09-1.52.89-2.83,2.09-4.66,6.31-9.59,13.81-14.24,22.91-14.24a1.59,1.59,0,1,1,0,3.18c-8.05,0-14.48,4.06-20.23,12.8-1.04,1.57-1.54,2.44-1.58,3.11A1.589,1.589,0,0,1,2690.6,1325.56Zm23.19,17.44h0c-8.59,0-17.03-5.1-22.58-13.63a1.589,1.589,0,0,1,.48-2.2,1.607,1.607,0,0,1,2.21.47c4.96,7.63,12.39,12.18,19.89,12.18h0c7.54,0,14.36-4.37,19.74-12.64a1.61,1.61,0,0,1,2.21-.48,1.591,1.591,0,0,1,.48,2.2C2730.31,1338,2722.34,1343,2713.79,1343Zm-0.07-7.07a12.24,12.24,0,1,1,12.31-12.24A12.289,12.289,0,0,1,2713.72,1335.93Zm0-21.3a9.06,9.06,0,1,0,9.11,9.06A9.1,9.1,0,0,0,2713.72,1314.63Zm-0.01,15.37a6.336,6.336,0,0,1-6.34-6.31,6.136,6.136,0,0,1,.49-2.43,1.6,1.6,0,0,1,2.95,1.23,3.1,3.1,0,0,0-.24,1.2,3.145,3.145,0,1,0,3.14-3.12,3.277,3.277,0,0,0-.88.12,1.59,1.59,0,1,1-.9-3.05A6.314,6.314,0,1,1,2713.71,1330Z"
-                                            transform="translate(-2689 -1304.97)" /></svg>
-                                </div>
-                                <h1 class="services__item-title">ophthalmology</h1>
-                                <p class="services__item-text">All analyzes are carried out<br>using modern equipment
-                                </p>
-                            </div>
-                        </div>
 
-                        <div class="services__outer-item">
-                            <div class="services__item">
-                                <div class="services__item-icon">
-                                    <svg width="49" height="53" viewBox="0 0 49 53">
-                                        <path id="service-icon1.svg" class="cls-2"
-                                            d="M1804.82,1343.67a2.32,2.32,0,1,1,2.32,2.3A2.309,2.309,0,0,1,1804.82,1343.67Zm31.99,6.43a1.717,1.717,0,0,1-1.51.89h-40.22a1.729,1.729,0,0,1-1.46-.81,1.674,1.674,0,0,1-.07-1.65l2.01-3.98a15.428,15.428,0,0,1-7.5-12.13c-0.53-6.71,2.86-13.48,9.12-18.37l-2.93-4.3a1.652,1.652,0,0,1-.26-1.28,1.676,1.676,0,0,1,.74-1.08l7.69-5.01a1.711,1.711,0,0,1,2.33.44l16.11,22.32a1.7,1.7,0,0,1,.29,1.27,1.649,1.649,0,0,1-.7,1.1l-7.64,5.36a1.727,1.727,0,0,1-2.36-.36l-4.02-5.32a5.744,5.744,0,0,1-2.34.5,5.853,5.853,0,0,1-2.1-.4,4.588,4.588,0,0,0-.46,5.6c1.84,2.9,6.66,4.85,11.62,3.18l12-8.36a1.72,1.72,0,0,1,2.38.41,1.679,1.679,0,0,1-.41,2.36l-12.2,8.5a1.9,1.9,0,0,1-.4.21,14.938,14.938,0,0,1-5.01.87c-4.76,0-8.95-2.33-10.88-5.37a7.9,7.9,0,0,1,.67-9.52,5.629,5.629,0,0,1-1-3.21,5.785,5.785,0,0,1,11.57,0,5.584,5.584,0,0,1-.86,2.99l3.18,4.2,4.88-3.42-14.15-19.62-4.86,3.17,2.88,4.21a1.688,1.688,0,0,1-.44,2.34c-6.12,4.25-9.49,10.35-9.02,16.32a12.084,12.084,0,0,0,7.1,10.18,1.681,1.681,0,0,1,.87.98,1.635,1.635,0,0,1-.09,1.3l-1.51,2.99h33.7c-1.55-1.45-3.76-2.95-6.23-2.95h-9.66a1.711,1.711,0,0,1-1.64-1.19,1.684,1.684,0,0,1,.68-1.9l13.81-9.27a1.716,1.716,0,0,1,2.38.45,1.683,1.683,0,0,1-.46,2.35l-9.19,6.17h4.08c6.59,0,11.21,6.81,11.41,7.1A1.722,1.722,0,0,1,1836.81,1350.1Zm-32.72-30.47a2.335,2.335,0,1,0,2.36,2.33A2.345,2.345,0,0,0,1804.09,1319.63Zm-2.52-18.52-7.69,5.01a1.792,1.792,0,0,1-.94.27,1.711,1.711,0,0,1-1.44-.76,1.691,1.691,0,0,1,.5-2.35l7.69-5a1.728,1.728,0,0,1,2.37.49A1.675,1.675,0,0,1,1801.57,1301.11Z"
-                                            transform="translate(-1788 -1298)" /></svg>
-                                </div>
-                                <h1 class="services__item-title">diagnostics</h1>
-                                <p class="services__item-text">All analyzes are carried out<br>using modern equipment
-                                </p>
-                            </div>
-                        </div>
 
-                        <div class="services__outer-item">
-                            <div class="services__item">
-                                <div class="services__item-icon">
-                                    <svg width="57" height="49" viewBox="0 0 57 49">
-                                        <path id="service-icon2.svg" class="cls-2"
-                                            d="M2116.36,1324.55a1.834,1.834,0,0,1-1.59-.95,1.9,1.9,0,0,1,.69-2.54,47.332,47.332,0,0,0,15.79-14.62,1.8,1.8,0,0,1,2.54-.46,1.888,1.888,0,0,1,.45,2.6,51.746,51.746,0,0,1-16.98,15.73A1.868,1.868,0,0,1,2116.36,1324.55Zm20.83-24.64a1.821,1.821,0,0,1-1.75-2.39,10.865,10.865,0,0,0-2.16-9.58c-2.23-2.46-4.68-3.65-7.31-3.59-3.55.11-7.53,2.56-10.91,6.73a1.807,1.807,0,0,1-2.57.25,1.907,1.907,0,0,1-.24-2.63c4.05-5,9.01-7.94,13.61-8.07,3.73-.12,7.12,1.49,10.09,4.77a14.717,14.717,0,0,1,2.99,13.18A1.839,1.839,0,0,1,2137.19,1299.91Zm-50.7-.15a1.839,1.839,0,0,1-1.78-1.45c-1.14-5.08-.13-9.66,2.82-12.91a13.345,13.345,0,0,1,11.72-4.58,1.855,1.855,0,0,1,1.62,2.05,1.823,1.823,0,0,1-2.01,1.65,9.763,9.763,0,0,0-8.65,3.42c-2.11,2.32-2.8,5.7-1.94,9.54a1.869,1.869,0,0,1-1.37,2.23A2,2,0,0,1,2086.49,1299.76Zm25.45,27.23a1.846,1.846,0,0,1-.81-0.19,68.609,68.609,0,0,1-22.39-18.33,1.879,1.879,0,0,1,.32-2.61,1.8,1.8,0,0,1,2.56.33,64.744,64.744,0,0,0,21.14,17.26,1.885,1.885,0,0,1,.82,2.5A1.827,1.827,0,0,1,2111.94,1326.99Zm1.34-11.24c-3.38,0-4.15-4.97-5.49-19.18-0.38-4.07-.91-9.67-1.57-12.85-0.51,2.82-.82,7.52-1.02,10.68-0.66,10.16-1.04,14.29-3.97,14.56-2.85.25-4.13-2.37-4.74-4.28h-10.67a1.865,1.865,0,0,1,0-3.73h12.04a1.824,1.824,0,0,1,1.76,1.39l0.03,0.11a10.721,10.721,0,0,0,.81,2.34c0.55-2.11.87-7.13,1.1-10.64,0.71-10.91,1.2-16.15,4.68-16.15,3.33,0,3.96,5.25,5.18,18.21,0.44,4.63,1.05,11.12,1.85,14.31,0.56-1.72,1.16-4.27,1.61-6.17,1.75-7.45,2.72-11.02,5.39-11.02,2.57,0,3.2,3.13,3.94,6.76a33.921,33.921,0,0,0,.89,3.73c0.03-.04.05-0.08,0.08-0.12a4.759,4.759,0,0,1,4.26-2.75h9.74a1.866,1.866,0,0,1,0,3.73h-9.74c-0.51,0-.63.11-1.17,0.99a3.951,3.951,0,0,1-3.44,2.36c-2.75,0-3.45-3.49-4.2-7.18-0.12-.64-0.29-1.47-0.47-2.22-0.62,1.86-1.28,4.67-1.74,6.6C2116.7,1312.52,2115.83,1315.75,2113.28,1315.75Z"
-                                            transform="translate(-2084 -1278)" /></svg>
-                                </div>
-                                <h1 class="services__item-title">Cardiology</h1>
-                                <p class="services__item-text">All analyzes are carried out<br>using modern equipment
-                                </p>
-                            </div>
-                        </div>
 
                     </div>
                 </div>
@@ -336,17 +199,7 @@
             <div class="container">
                 <div class="about__our-misson wow fadeInLeft" data-wow-duration="1s">
 
-                    <div class="about__our-misson-text">
-                        <div class="icon">
-                            <svg width="43" height="35" viewBox="0 0 43 35">
-                                <path id="mission-icon.svg" class="cls-2"
-                                    d="M3977,1891.26h-9.41l-1.79-2.7h-2.32a12.115,12.115,0,1,1,0-2.69h2.32l1.79-2.69H3977l-2.69,4.04Zm-25.53-5.39h3.78a4.045,4.045,0,1,0,0,2.69h-3.78A1.345,1.345,0,0,1,3951.47,1885.87Zm0,8.08a6.735,6.735,0,1,1,6.58-8.08h2.72a9.425,9.425,0,1,0,0,2.69h-2.72A6.733,6.733,0,0,1,3951.47,1893.95Zm20.51-8.08h-2.95l-0.89,1.35,0.89,1.34h2.95l-0.9-1.34Zm-20.51-13.46a14.81,14.81,0,1,0,13.42,20.98l2.44,1.12a17.505,17.505,0,1,1,0-14.59l-2.44,1.13A14.814,14.814,0,0,0,3951.47,1872.41Z"
-                                    transform="translate(-3934 -1869.72)" /></svg>
-                        </div>
-                        <h1 class="title">our mission</h1>
-                        <p class="text">Our mission is to care for patients,<br>families, communities, and one another
-                        </p>
-                    </div>
+
 
                     <div class="about__our-misson-img">
                         <img src="../site/images/jpg/about-img.jpg">
@@ -355,24 +208,23 @@
                 </div>
 
                 <div class="about__text wow fadeInRight" data-wow-duration="1s">
-                    <h4>NOSSA HISTÓRIA</h4>
-                    <h1 class="section-title">QUEM SOMOS</h1>
-                    <p>IBNSINO Medical Center provide patients with choices to ask for the conducting and analyzing of
-                        several lab tests on-site at no cost for prioritized patients or at 70% for people with an
-                        insurance.</p>
+                    <h4>Nossa história</h4>
+                    <h1 class="section-title">Quem somos</h1>
+                    <p>{!! !empty($quemsomos->quemsomos) ? '$quemsomos->quemsomos' : 'A CLINIVIDA surgiu com o objetivo de cuidar de você. Nosso espaço foi planejado e projetado para seu conforto e bem-estar! <br> <br>
+
+Contamos com especialistas em clínica médica, endoscopia digestiva e bariátrica, cirurgia geral, endocrinologia, nutrição, psicologia, ultrassonografia, exames laboratoriais e bioimpedância. <br>
+Um atendimento completo para você realizar tudo em um só lugar!' !!}</p>
 
                 </div>
                 <div class="emergency-call__items" style="padding-top:50px;">
                     <div class="emergency-call__item">
                         <div class="icon">
-                            <svg width="42" height="42" viewBox="0 0 42 42">
-                                <path id="icon4.svg" class="cls-2"
-                                    d="M2140.64,3491.34a1.351,1.351,0,0,1-1.36-1.34v-5.68a9.658,9.658,0,0,0-2.06-5.41c-2.85-3.63-7.52-9.53-8.02-10.05-1.28-1.27-1.79-1.64-4.82-1.64h-18.81a2.587,2.587,0,0,0-2.85,2.6c0,1.66-.01,20.18-0.01,20.18a1.36,1.36,0,0,1-2.72,0s0.01-18.52.01-20.18a5.251,5.251,0,0,1,5.57-5.28h18.81c3.67,0,4.9.6,6.74,2.42,0.67,0.67,6.96,8.67,8.22,10.27a12.275,12.275,0,0,1,2.66,7.09V3490A1.351,1.351,0,0,1,2140.64,3491.34Zm-19.79-27.55a1.342,1.342,0,0,1-1.35-1.34,2.28,2.28,0,0,0-4.56,0,1.355,1.355,0,0,1-2.71,0,4.99,4.99,0,0,1,9.98,0A1.351,1.351,0,0,1,2120.85,3463.79Zm-7.64,7.27a1.359,1.359,0,0,1,1.36,1.35v2.79h2.82a1.345,1.345,0,1,1,0,2.69h-2.82v2.79a1.355,1.355,0,0,1-2.71,0v-2.79h-2.82a1.345,1.345,0,1,1,0-2.69h2.82v-2.79A1.351,1.351,0,0,1,2113.21,3471.06Zm11.09,12.31a1.342,1.342,0,0,1-1.35-1.34v-12.51a1.355,1.355,0,0,1,2.71,0v11.17h10.58a1.34,1.34,0,1,1,0,2.68H2124.3Zm-22.95,8.92h2.26a5.924,5.924,0,0,1,11.51,0h11.17a5.924,5.924,0,0,1,11.51,0h2.84a1.345,1.345,0,1,1,0,2.69h-2.84a5.924,5.924,0,0,1-11.51,0h-11.17a5.924,5.924,0,0,1-11.51,0h-2.26A1.345,1.345,0,1,1,2101.35,3492.29Zm30.7,4.52a3.175,3.175,0,1,0-3.21-3.18A3.2,3.2,0,0,0,2132.05,3496.81Zm-22.69,0a3.175,3.175,0,1,0-3.2-3.18A3.2,3.2,0,0,0,2109.36,3496.81Z"
-                                    transform="translate(-2100 -3457.5)" /></svg>
+                            <svg id="svg"width="400" height="400" viewBox="0, 0, 400,400"><g id="svgg"><path id="path0" d="" stroke="none" fill="#fcfcfc" fill-rule="evenodd"></path><path id="path1" d="" stroke="none" fill="#100fcfc" fill-rule="evenodd"></path><path id="path2" d="" stroke="none" fill="#100fcfc" fill-rule="evenodd"></path><path id="path3" d="" stroke="none" fill="#100fcfc" fill-rule="evenodd"></path><path id="path4" d="" stroke="none" fill="#100fcfc" fill-rule="evenodd"></path></g></svg>
                         </div>
                         <div class="content">
-                            <h1>24 Hour Emergency</h1>
-                            <p>Open round the clock for conve-nience, quick and easy access</p>
+                            <h1>Missão</h1>
+                            <p>{!! !empty($quemsomos->missao) ? '$quemsomos->missao' : 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard.' !!}</p>
+
                         </div>
                     </div>
 
@@ -384,8 +236,8 @@
                                     transform="translate(-2505 -3459.5)" /></svg>
                         </div>
                         <div class="content">
-                            <h1>Complate Lab Services</h1>
-                            <p>Cost-efficient, comprehensive and clinical laboratory services</p>
+                            <h1>Visão</h1>
+                            <p>{!! !empty($quemsomos->visao) ? '$quemsomos->visao' : 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard.' !!}</p>
                         </div>
                     </div>
 
@@ -397,8 +249,8 @@
                                     transform="translate(-2901 -3459.5)" /></svg>
                         </div>
                         <div class="content">
-                            <h1>Medical Professionals</h1>
-                            <p>Qualified and certified physicians for qulity medical care</p>
+                            <h1>Valores</h1>
+                            <p>{!! !empty($quemsomos->valores) ? '$quemsomos->valores' : 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard.' !!}</p>
                         </div>
                     </div>
                 </div>
@@ -409,14 +261,7 @@
 
         <section class="form laranja" style="padding-top:470px">
           <!-- Start of .header-bottom .services -->
-
-
           <div class="services" style="bottom:-73px; top:53px">
-            <!-- <div class="footer__bg">
-                <div class="icon1">
-                    <img src="../site/images/bg-formas.png">
-                </div>
-            </div> -->
               <div class="container">
 
                 <div class="container" style="padding:0; justify-content: flex-start;">
@@ -426,6 +271,8 @@
 
 
                       <div class="services__outer-item">
+                        @foreach($banners as $banner)
+
                           <div class="services__item">
                               <div class="services__item-icon">
                                   <svg width="53.03" height="44" viewBox="0 0 53.03 44">
@@ -437,6 +284,7 @@
                               <p class="services__item-text">All analyzes are carried out<br>using modern equipment
                               </p>
                           </div>
+                        @endforeach
                       </div>
 
 

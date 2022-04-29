@@ -134,12 +134,18 @@ These are css styles, others're attached
 /**************************************************/
 /* fonts */
 /**************************************************/
+    @font-face {
+    font-family: 'Pathways V2 Rough Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Pathways V2 Rough Regular'), url('../fonts/pathways/PathwaysV2Rough-Regular.woff') format('woff');
+    }
 
     @font-face {
     font-family: 'Montserrat Alternates Regular';
     font-style: normal;
     font-weight: normal;
-    src: local('Montserrat Alternates Regular'), url('..site/fonts/MontserratAlternates-Regular.woff') format('woff');
+    src: local('Montserrat Alternates Regular'), url('../fonts/MontserratAlternates-Regular.woff') format('woff');
     }
 
 
@@ -147,7 +153,7 @@ These are css styles, others're attached
     font-family: 'Montserrat Alternates Italic';
     font-style: normal;
     font-weight: normal;
-    src: local('Montserrat Alternates Italic'), url('..site/fonts/MontserratAlternates-Italic.woff') format('woff');
+    src: local('Montserrat Alternates Italic'), url('../fonts/MontserratAlternates-Italic.woff') format('woff');
     }
 
 
@@ -155,7 +161,7 @@ These are css styles, others're attached
     font-family: 'Montserrat Alternates Thin';
     font-style: normal;
     font-weight: normal;
-    src: local('Montserrat Alternates Thin'), url('..site/fonts/MontserratAlternates-Thin.woff') format('woff');
+    src: local('Montserrat Alternates Thin'), url('../fonts/MontserratAlternates-Thin.woff') format('woff');
     }
 
 
@@ -163,7 +169,7 @@ These are css styles, others're attached
     font-family: 'Montserrat Alternates Thin Italic';
     font-style: normal;
     font-weight: normal;
-    src: local('Montserrat Alternates Thin Italic'), url('..site/fonts/MontserratAlternates-ThinItalic.woff') format('woff');
+    src: local('Montserrat Alternates Thin Italic'), url('../fonts/MontserratAlternates-ThinItalic.woff') format('woff');
     }
 
 
@@ -171,7 +177,7 @@ These are css styles, others're attached
     font-family: 'Montserrat Alternates ExtraLight';
     font-style: normal;
     font-weight: normal;
-    src: local('Montserrat Alternates ExtraLight'), url('..site/fonts/MontserratAlternates-ExtraLight.woff') format('woff');
+    src: local('Montserrat Alternates ExtraLight'), url('../fonts/MontserratAlternates-ExtraLight.woff') format('woff');
     }
 
 
@@ -179,7 +185,7 @@ These are css styles, others're attached
     font-family: 'Montserrat Alternates ExtraLight Italic';
     font-style: normal;
     font-weight: normal;
-    src: local('Montserrat Alternates ExtraLight Italic'), url('..site/fonts/MontserratAlternates-ExtraLightItalic.woff') format('woff');
+    src: local('Montserrat Alternates ExtraLight Italic'), url('../fonts/MontserratAlternates-ExtraLightItalic.woff') format('woff');
     }
 
 
@@ -187,7 +193,7 @@ These are css styles, others're attached
     font-family: 'Montserrat Alternates Light';
     font-style: normal;
     font-weight: normal;
-    src: local('Montserrat Alternates Light'), url('..site/fonts/MontserratAlternates-Light.woff') format('woff');
+    src: local('Montserrat Alternates Light'), url('../fonts/MontserratAlternates-Light.woff') format('woff');
     }
 
 
@@ -195,7 +201,7 @@ These are css styles, others're attached
     font-family: 'Montserrat Alternates Light Italic';
     font-style: normal;
     font-weight: normal;
-    src: local('Montserrat Alternates Light Italic'), url('..site/fonts/MontserratAlternates-LightItalic.woff') format('woff');
+    src: local('Montserrat Alternates Light Italic'), url('../fonts/MontserratAlternates-LightItalic.woff') format('woff');
     }
 
 
@@ -203,7 +209,7 @@ These are css styles, others're attached
     font-family: 'Montserrat Alternates Medium';
     font-style: normal;
     font-weight: normal;
-    src: local('Montserrat Alternates Medium'), url('..site/fonts/MontserratAlternates-Medium.woff') format('woff');
+    src: local('Montserrat Alternates Medium'), url('../fonts/MontserratAlternates-Medium.woff') format('woff');
     }
 
 
@@ -211,7 +217,7 @@ These are css styles, others're attached
     font-family: 'Montserrat Alternates Medium Italic';
     font-style: normal;
     font-weight: normal;
-    src: local('Montserrat Alternates Medium Italic'), url('..site/fonts/MontserratAlternates-MediumItalic.woff') format('woff');
+    src: local('Montserrat Alternates Medium Italic'), url('../fonts/MontserratAlternates-MediumItalic.woff') format('woff');
     }
 
 
@@ -219,7 +225,7 @@ These are css styles, others're attached
     font-family: 'Montserrat Alternates SemiBold';
     font-style: normal;
     font-weight: normal;
-    src: local('Montserrat Alternates SemiBold'), url('..site/fonts/MontserratAlternates-SemiBold.woff') format('woff');
+    src: local('Montserrat Alternates SemiBold'), url('../fonts/MontserratAlternates-SemiBold.woff') format('woff');
     }
 
 
@@ -227,7 +233,7 @@ These are css styles, others're attached
     font-family: 'Montserrat Alternates SemiBold Italic';
     font-style: normal;
     font-weight: normal;
-    src: local('Montserrat Alternates SemiBold Italic'), url('..site/fonts/MontserratAlternates-SemiBoldItalic.woff') format('woff');
+    src: local('Montserrat Alternates SemiBold Italic'), url('../fonts/MontserratAlternates-SemiBoldItalic.woff') format('woff');
     }
 
 
@@ -235,7 +241,7 @@ These are css styles, others're attached
     font-family: 'Montserrat Alternates Bold';
     font-style: normal;
     font-weight: normal;
-    src: local('Montserrat Alternates Bold'), url('..site/fonts/MontserratAlternates-Bold.woff') format('woff');
+    src: local('Montserrat Alternates Bold'), url('../fonts/MontserratAlternates-Bold.woff') format('woff');
     }
 
 
@@ -243,7 +249,7 @@ These are css styles, others're attached
     font-family: 'Montserrat Alternates Bold Italic';
     font-style: normal;
     font-weight: normal;
-    src: local('Montserrat Alternates Bold Italic'), url('..site/fonts/MontserratAlternates-BoldItalic.woff') format('woff');
+    src: local('Montserrat Alternates Bold Italic'), url('../fonts/MontserratAlternates-BoldItalic.woff') format('woff');
     }
 
 
@@ -251,7 +257,7 @@ These are css styles, others're attached
     font-family: 'Montserrat Alternates ExtraBold';
     font-style: normal;
     font-weight: normal;
-    src: local('Montserrat Alternates ExtraBold'), url('..site/fonts/MontserratAlternates-ExtraBold.woff') format('woff');
+    src: local('Montserrat Alternates ExtraBold'), url('../fonts/MontserratAlternates-ExtraBold.woff') format('woff');
     }
 
 
@@ -259,7 +265,7 @@ These are css styles, others're attached
     font-family: 'Montserrat Alternates ExtraBold Italic';
     font-style: normal;
     font-weight: normal;
-    src: local('Montserrat Alternates ExtraBold Italic'), url('..site/fonts/MontserratAlternates-ExtraBoldItalic.woff') format('woff');
+    src: local('Montserrat Alternates ExtraBold Italic'), url('../fonts/MontserratAlternates-ExtraBoldItalic.woff') format('woff');
     }
 
 
@@ -267,7 +273,7 @@ These are css styles, others're attached
     font-family: 'Montserrat Alternates Black';
     font-style: normal;
     font-weight: normal;
-    src: local('Montserrat Alternates Black'), url('..site/fonts/MontserratAlternates-Black.woff') format('woff');
+    src: local('Montserrat Alternates Black'), url('../fonts/MontserratAlternates-Black.woff') format('woff');
     }
 
 
@@ -275,7 +281,7 @@ These are css styles, others're attached
     font-family: 'Montserrat Alternates Black Italic';
     font-style: normal;
     font-weight: normal;
-    src: local('Montserrat Alternates Black Italic'), url('..site/fonts/MontserratAlternates-BlackItalic.woff') format('woff');
+    src: local('Montserrat Alternates Black Italic'), url('../fonts/MontserratAlternates-BlackItalic.woff') format('woff');
     }
 /**************************************************/
 /* base */
@@ -343,10 +349,9 @@ ol {
 }
 
 .section-title {
-  text-transform: uppercase;
-  font-family: "Montserrat Alternates Bold";
+  font-family: "Montserrat Alternates Semibold";
   color: #d85f19;
-  font-size: 80px;
+  font-size: 53px;
   line-height: 0.8;
   letter-spacing: -1.6px;
 }
@@ -4840,7 +4845,7 @@ a:hover {
 
 .header-top__call-text > a {
   margin-top: -3px;
-  color: #ffffff;
+  color: #d85f19;
   font-size: 17.5px;
   font-weight: 700;
   font-family: "Montserrat Alternates Bold";
@@ -5296,7 +5301,7 @@ a:hover {
 .header-bottom__banner .slide-item {
   width: 100%;
   height: 1000px;
-  padding-top: 310px;
+  padding-top: 240px;
   overflow: hidden;
   position: relative;
 }
@@ -5346,20 +5351,25 @@ a:hover {
 
 .header-bottom__banner .slide-item__title {
   margin-left: -2px;
-  text-transform: uppercase;
+  margin-bottom: 100px;
+  /* text-transform: uppercase; */
   font-size: 70px;
   font-family: "Montserrat Alternates Light";
-  font-weight: 900;
+  font-weight: 100;
   line-height: 1;
   letter-spacing: 0px;
-  width: 100%;
+  width: 50%;
   color: #9a0000;
 }
 
 .header-bottom__banner .slide-item__title span {
   font-weight: 900;
-  font-family: "Montserrat Alternates";
-  color: #d85f19;
+  font-family: "Pathways V2 Rough Regular";
+  color: #9a0000;
+  font-size: 100px;
+
+  line-height: 68px;
+    margin-left: 100px;
 }
 
 .header-bottom__banner .slide-item__subtitle {
