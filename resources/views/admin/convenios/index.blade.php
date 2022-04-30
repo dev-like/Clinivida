@@ -1,11 +1,11 @@
 @extends('admin.main')
 
 @section('page-title')
-    Convenios Cadastrados
+    Convênios Cadastrados
 @endsection
 
 @section('page-caminho')
-    Convenios
+    Convênios
 @endsection
 
 @section('styles')
@@ -77,7 +77,7 @@
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
-                    <h4 class="modal-title">Cadastrar Convenios</h4>
+                    <h4 class="modal-title">Cadastrar Convênio</h4>
                 </div>
                 <form enctype="multipart/form-data"
                       action="{{ route('convenios.store') }}"

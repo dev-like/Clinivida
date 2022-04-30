@@ -18,7 +18,7 @@ convenios<div class="left side-menu">
                 </li>
                 <li>
                     <a href="{{ route('convenios.index') }}">
-                        <i class="fa fa-handshake-o"></i> <span> Convenios </span>
+                        <i class="fa fa-handshake-o"></i> <span> Convênios </span>
                     </a>
                 </li>
                 <li>

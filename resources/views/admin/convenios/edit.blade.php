@@ -1,11 +1,11 @@
 @extends('admin.main')
 
 @section('page-title')
-    Editar convenio {{ $convenio->id }}
+    Editar convênio {{ $convenio->id }}
 @endsection
 
 @section('page-caminho')
-    Convenio
+    Convênio
 @endsection
 
 @section('styles')
