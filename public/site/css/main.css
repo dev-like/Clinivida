@@ -5369,14 +5369,31 @@ a:hover {
   color: #9a0000;
 }
 
+@media (max-width: 529px) {
+  .header-bottom__banner .slide-item__title {
+    margin-bottom: 60px;
+  }
+}
+
+@media (max-width: 990px) {
+  .header-bottom__banner .slide-item__title {
+    margin-bottom: 30px;
+  }
+}
+
 .header-bottom__banner .slide-item__title span {
   font-weight: 900;
   font-family: "Pathways V2 Rough Regular";
   color: #9a0000;
   font-size: 100px;
-
   line-height: 68px;
-    margin-left: 100px;
+  margin-left: 100px;
+}
+
+@media (max-width: 420px) {
+  .header-bottom__banner .slide-item__title span {
+    margin-left: 30px;
+  }
 }
 
 .header-bottom__banner .slide-item__subtitle {
