@@ -370,13 +370,13 @@
 
                       <div class="services__outer-item">
                           <div class="services__item">
-                              <div class="services__item-icon" style="height: 160px;">
-                                <img href="{{ $convenio->link }}" src="{{ asset('uploads/convenios/'. ($convenio->logo)) }}">
-                                  
+                              <div class="services__item-icon" style="height: 224px;">
+                                <img onclick="redirecionar('{{ $convenio->link }}')" src="{{ asset('uploads/convenios/'. ($convenio->logo)) }}">
+
                               </div>
-                              <div class="navbar__right">
+                              <!-- <div class="navbar__right">
                                   <a href="{{ $convenio->link }}" class="btn btn_pink">Site</a>
-                              </div>
+                              </div> -->
                               <h1 class="services__item-title"> </h1>
                               <p class="services__item-text"> </p>
                           </div>
@@ -505,7 +505,7 @@
                                 <div class="socials">
                                     <?php
                                       if (!empty($quemsomos->facebook)) { echo ('<a href="'.$quemsomos->facebook.'" title="facebook"><i class="fa fa-facebook"></i></a>'); }
-                                      if (!empty($quemsomos->instagram)) { echo ('<a href="'.$quemsomos->facebook.'" title="instagram"><i class="fa fa-instagram"></i></a>'); }
+                                      if (!empty($quemsomos->instagram)) { echo ('<a href="'.$quemsomos->instagram.'" title="instagram"><i class="fa fa-instagram"></i></a>'); }
                                     ?>
                                 </div>
                             </div>
@@ -607,7 +607,11 @@
 		</body>
     <!-- Scripts + Jquery plagins -->
 
-
+    <script>
+      function redirecionar(link) {
+        window.location.href = link;
+      }
+    </script>
 			@include('partials._scripts')
     <!-- owl-carousel js -->
     <script src="../site/js/owl.carousel.min.js"></script>
