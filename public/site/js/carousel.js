@@ -81,19 +81,19 @@ $("document").ready(function ($) {
                 nav: true,
             },
 
-            390: {
+            767: {
                 dots: true,
                 nav: false,
                 items: 2,
             },
 
-            768: {
+            992: {
                 dots: true,
                 nav: false,
                 items: 3,
             },
 
-            992: {
+            1200: {
                 dots: true,
                 nav: false,
                 items: 4,
