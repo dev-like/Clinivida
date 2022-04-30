@@ -17362,10 +17362,11 @@ body {
             flex: 0 0 200px;
   }
   .header-bottom .services__item-title {
-    font-size: 24px;
+    font-size: 22px;
+    margin-top: 0px;
   }
   .header-bottom .services__item-text {
-    font-size: 12px;
+    font-size: 10px;
   }
   .header-bottom .services .owl-dots {
     top: 10px;
@@ -21098,7 +21099,7 @@ body {
   /*---------- End .other-services-2 responsive ----------*/
 }
 
-@media (max-width: 389px) {
+@media (max-width: 420px) {
   /*---------- Start .header-bottom responsive ----------*/
   .header-bottom .services {
     bottom: -360px;
