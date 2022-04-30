@@ -136,7 +136,7 @@
 
                     </ul>
 
-                    <div class="navbar__right">
+                    <div class="navbar__right" style="height: 40px;">
                         <a href="https://api.whatsapp.com/send?phone=99991601011" class="btn btn_pink">AGENDE SUA CONSULTA</a>
 
                     </div>
@@ -386,7 +386,7 @@
         <footer class="footer">
             <div class="footer__top">
                 <div class="footer__logo">
-                    <img src="../site/images/logo-branca.png" alt="footer-logo">
+                    <img src="../site/images/logo-branca.png" alt="footer-logo" style="margin-bottom: 50px;">
                 </div>
                 <div class="mapa anchor" id="contato"></div>
                 <div class="container">
