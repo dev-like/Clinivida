@@ -8,9 +8,6 @@
     <title>Clinivida - A sua saúde tratada com respeito!</title>
     <link rel="shortcut icon" href="{{ asset('template/images/favicon/favicon.ico') }}">
 
-    <!-- wow animation style -->
-    <!-- <link rel="stylesheet" href="./css/animate.css"> -->
-
     <!-- owl-carousel -->
     <link rel="stylesheet" href="../site/css/owl.carousel.min.css">
     <link rel="stylesheet" href="../site/css/owl.theme.default.min.css">
@@ -26,7 +23,6 @@
     <!-- Start of .preloader -->
     <div class="preloader">
         <div class="loader"></div>
-        <!-- <h6 class="preloader-text">IbnSino<br>Template</h6> -->
     </div>
     <!-- End of .preloader -->
 
@@ -78,14 +74,12 @@
                             $endereco_metade_1 = substr($endereco_inteiro, 0, $endereco_tamanho_1);
                             $endereco_metade_2 = substr($endereco_inteiro, $endereco_tamanho_1, $endereco_tamanho_2);
                           ?>
-                          <a href="">{!! !empty($quemsomos->endereco_matriz) ? $endereco_metade_1 : 'Rua Alagoas, 198 - ' !!}</a>
-                          <a href="">{!! !empty($quemsomos->endereco_matriz) ? $endereco_metade_2 : 'Juçara - Imperatriz' !!}</a>
+                          <a href="{!! !empty($quemsomos->endereco_matriz_link) ? $quemsomos->endereco_matriz_link : '' !!}">{!! !empty($quemsomos->endereco_matriz) ? $endereco_metade_1 : 'Rua Alagoas, 198 - ' !!}</a>
+                          <a href="{!! !empty($quemsomos->endereco_matriz_link) ? $quemsomos->endereco_matriz_link : '' !!}">{!! !empty($quemsomos->endereco_matriz) ? $endereco_metade_2 : 'Juçara - Imperatriz' !!}</a>
 
                         </div>
                     </div>
-                    <!-- End of .header-top__call-item -->
 
-                    <!-- header-top__call-item -->
                     <div class="header-top__call-item">
                         <svg width="25.16" height="25.157" viewBox="0 0 25.16 25.157">
                             <path id="envelope.svg" class="header-top__call-icon cls-1"
@@ -95,19 +89,15 @@
                             <a href="mailto:{!! !empty($quemsomos->email) ? ($quemsomos->email) : 'contato@clinividaitz.com.br' !!}">{!! !empty($quemsomos->email) ? ($quemsomos->email) : 'contato@clinividaitz.com.br' !!}</a>
                         </div>
                     </div>
-                    <!-- End of .header-top__call-item -->
 
                 </div>
-                <!-- End of .header-top__call -->
+
             </div>
         </header>
-        <!-- End of .header-top -->
 
-        <!-- Start of .header-middle -->
         <header class="header-middle header-middle_white-transparent">
             <div class="container">
 
-                <!-- hidden navbar for mobiles -->
                 <div class="navbar-logo">
                     <a href="{{url("/")}}">
                         <img src="../site/images/logo.png" />
@@ -118,11 +108,11 @@
 
                     <ul class="navbar__menu">
                         <li class="navbar__menu-item">
-                            <a class="navbar__menu-link" href="#about">Quem Somos</a>
+                            <a class="navbar__menu-link" href="#sobre">Quem Somos</a>
 
                         </li>
                         <li class="navbar__menu-item">
-                            <a class="navbar__menu-link" href="#services">Exames</a>
+                            <a class="navbar__menu-link" href="#exames">Exames</a>
 
                         </li>
                         <li class="navbar__menu-item">
@@ -134,6 +124,15 @@
 
                         </li>
 
+                        <li class="navbar__menu-item">
+                            <a class="navbar__menu-link" href="#localizacao">Localização</a>
+
+                        </li>
+
+                        <li class="navbar__menu-item">
+                            <a class="navbar__menu-link" href="#contato">Contato</a>
+
+                        </li>
 
                     </ul>
 
@@ -145,11 +144,9 @@
 
             </div>
         </header>
-        <!-- End of .header-middle -->
 
-        <!-- Start of .header-bottom -->
         <header class="header-bottom">
-            <!-- Start of .header-bottom .header-bottom__banner -->
+
             <div class="header-bottom__banner owl-carousel owl-theme">
               @foreach($banners as $banner)
                 <div class="slide-item">
@@ -166,9 +163,7 @@
 
 
             </div>
-            <!--  End of .header-bottom__banner -->
 
-            <!-- Start of .header-bottom .services -->
             <div class="services">
                 <div class="container">
                     <div class="services__items owl-carousel owl-theme">
@@ -178,10 +173,6 @@
                             <div class="services__item">
                                 <div class="services__item-icon">
                                     <img src="{{ asset('uploads/especialidades/'. ($especialidade->image)) }}">
-                                    <!-- <svg width="53.03" height="44" viewBox="0 0 53.03 44">
-                                        <path id="service-icon3.svg" class="cls-2"
-                                            d="M2421.76,1346a3.507,3.507,0,0,1-1.17-.2c-2.79-.97-3.24-4.42-3.73-8.07-0.66-4.93-1.29-7.12-3.34-7.12a1.665,1.665,0,1,1,0-3.33c5.37,0,6.14,5.79,6.7,10.02,0.26,1.9.68,5.08,1.51,5.37h0a3.451,3.451,0,0,0,1.95-.93c4.64-3.34,12.09-14.39,12.88-22.81a14.03,14.03,0,0,0-2.99-10.61,8.62,8.62,0,0,0-6.11-3.01c-2.33-.13-5.2.71-7.95,1.63a1.708,1.708,0,0,1-2.16-1.04,1.656,1.656,0,0,1,1.06-2.11c3.55-1.19,6.49-1.94,9.24-1.8a11.97,11.97,0,0,1,8.49,4.16,17.3,17.3,0,0,1,3.8,13.09c-0.94,10.03-9.57,22.28-14.93,25.64A6.185,6.185,0,0,1,2421.76,1346Zm-16.47,0a6.215,6.215,0,0,1-3.26-1.12c-5.36-3.36-13.99-15.61-14.92-25.64-0.44-4.72.75-8.94,3.36-11.9a12.448,12.448,0,0,1,8.93-4.18,18.406,18.406,0,0,1,5.63.71c1.97,0.5,3.72,1.14,5.58,1.81a42.83,42.83,0,0,0,15.06,3.15,1.666,1.666,0,1,1-.08,3.33,46.47,46.47,0,0,1-16.15-3.36c-1.78-.64-3.46-1.25-5.27-1.71a15.182,15.182,0,0,0-4.58-.61,9.141,9.141,0,0,0-6.56,3.03c-2,2.27-2.9,5.61-2.54,9.42,0.78,8.42,8.23,19.47,12.87,22.81a3.691,3.691,0,0,0,1.96.93c0.88-.31,1.39-3.62,1.7-5.59,0.67-4.37,1.51-9.8,6.5-9.8a1.665,1.665,0,1,1,0,3.33c-1.93,0-2.52,2.89-3.15,6.96-0.57,3.73-1.12,7.26-3.92,8.23A3.492,3.492,0,0,1,2405.29,1346Z"
-                                            transform="translate(-2387 -1302)" /></svg> -->
                                 </div>
                                 <h1 class="services__item-title">{{ $especialidade->nome }}</h1>
                                 <p class="services__item-text">{{ $especialidade->descricao }}</p>
@@ -192,12 +183,10 @@
                     </div>
                 </div>
             </div>
-            <!-- End of .services -->
-        </header>
-        <!-- End of .header-bottom -->
 
-        <!-- Start of .about -->
-        <section class="about" id="about">
+        </header>
+
+        <section class="about">
             <div class="about__bg">
                 <div class="icon">
                     <svg width="830" height="1013" viewBox="0 0 830 1013">
@@ -207,6 +196,7 @@
                 </div>
             </div>
 
+            <div class="anchor" id="sobre" style="height: 60px; margin-top: -60px;"></div>
             <div class="container">
                 <div class="about__our-misson wow fadeInLeft" data-wow-duration="1s">
 
@@ -226,7 +216,6 @@
                     <div class="emergency-call__item">
                         <div class="icon">
                           <img src="../site/images/png/ícone missão.png">
-                            <!-- <svg id="svg"width="400" height="400" viewBox="0, 0, 400,400"><g id="svgg"><path id="path0" d="" stroke="none" fill="#fcfcfc" fill-rule="evenodd"></path><path id="path1" d="" stroke="none" fill="#100fcfc" fill-rule="evenodd"></path><path id="path2" d="" stroke="none" fill="#100fcfc" fill-rule="evenodd"></path><path id="path3" d="" stroke="none" fill="#100fcfc" fill-rule="evenodd"></path><path id="path4" d="" stroke="none" fill="#100fcfc" fill-rule="evenodd"></path></g></svg> -->
                         </div>
                         <div class="content">
                             <h1>Missão</h1>
@@ -237,10 +226,6 @@
                     <div class="emergency-call__item">
                         <div class="icon">
                             <img src="../site/images/png/ícone visão.png">
-                            <!-- <svg width="33" height="42" viewBox="0 0 33 42">
-                                <path id="icon5.svg" class="cls-2"
-                                    d="M2537.62,3499.46c-0.39.76-1.46,2.04-4.15,2.04h-23.92c-2.69,0-3.76-1.28-4.15-2.04s-0.83-2.36.72-4.54l4.16-5.85a2.076,2.076,0,0,1,.24-0.34l5.48-7.7v-16.17a1.349,1.349,0,0,1,1.35-1.34h8.32a1.349,1.349,0,0,1,1.35,1.34v16.17l5.48,7.7a1.609,1.609,0,0,1,.24.34l4.16,5.85C2538.45,3497.1,2538.02,3498.7,2537.62,3499.46Zm-13.06-17.23a1.312,1.312,0,0,1-.25-0.77v-15.25h-5.6v15.25a1.312,1.312,0,0,1-.25.77l-4.34,6.11h14.78Zm10.13,14.24-3.88-5.45h-18.6l-3.88,5.45a1.94,1.94,0,0,0-.53,1.76,1.973,1.973,0,0,0,1.75.58h23.92a1.973,1.973,0,0,0,1.75-.58A1.91,1.91,0,0,0,2534.69,3496.47Zm-11.75-9.05a1.82,1.82,0,1,1,1.84-1.82A1.822,1.822,0,0,1,2522.94,3487.42Zm-1.52-5.35a1.455,1.455,0,1,1,1.47-1.45A1.46,1.46,0,0,1,2521.42,3482.07Zm4.29-19.87h-8.4a1.345,1.345,0,1,1,0-2.69h8.4A1.345,1.345,0,1,1,2525.71,3462.2Z"
-                                    transform="translate(-2505 -3459.5)" /></svg> -->
                         </div>
                         <div class="content">
                             <h1>Visão</h1>
@@ -251,10 +236,6 @@
                     <div class="emergency-call__item">
                         <div class="icon">
                             <img src="../site/images/png/ícone valores.png">
-                            <!-- <svg width="38" height="42" viewBox="0 0 38 42">
-                                <path id="icon6.svg" class="cls-2"
-                                    d="M2937.66,3501.5h-35.31a1.345,1.345,0,0,1,0-2.69h33.96c-0.04-5.67-.39-9.4-1.03-11.08-0.86-2.24-4.54-4.26-6.79-5.26-1.97,3.47-5.08,5.5-8.51,5.5h0c-3.38,0-6.46-2.03-8.43-5.49-2.24.99-5.93,3.02-6.78,5.25a19.374,19.374,0,0,0-.75,7.06c0.01,0.49.02,0.96,0.02,1.41a1.34,1.34,0,1,1-2.68,0c0-.43-0.01-0.89-0.02-1.36a21.394,21.394,0,0,1,.93-8.07c1.63-4.27,8.66-6.97,9.45-7.27a1.345,1.345,0,0,1,1.68.7c1.48,3.23,3.88,5.09,6.58,5.09h0c2.72,0,5.21-1.9,6.67-5.09a1.337,1.337,0,0,1,1.67-.7c0.8,0.3,7.83,3,9.46,7.27,1.09,2.86,1.22,9.01,1.22,13.39A1.34,1.34,0,0,1,2937.66,3501.5Zm-7.37-31.3h-0.06a9.755,9.755,0,0,1-.11,1.57,14.718,14.718,0,0,1-1.28,3.86,1.44,1.44,0,0,1-.2.39c-2.12,4.02-5.79,6.53-8.66,8.17a1.311,1.311,0,0,1-.66.18,1.33,1.33,0,0,1-1.16-.67,1.35,1.35,0,0,1,.49-1.84,21.175,21.175,0,0,0,6.45-5.29h-10.06a9.782,9.782,0,0,0,2.69,1.76,1.346,1.346,0,0,1,.68,1.77,1.312,1.312,0,0,1-1.76.69,11.578,11.578,0,0,1-7.12-10.61,1.332,1.332,0,0,1-1.11-1.56l1.42-8a1.331,1.331,0,0,1,1.31-1.11h17.71a1.34,1.34,0,0,1,1.32,1.11l1.38,7.81a1.213,1.213,0,0,1,.07.43A1.34,1.34,0,0,1,2930.29,3470.2Zm-17.24,3.69h13.64a11.666,11.666,0,0,0,.79-2.6,6.468,6.468,0,0,0,.07-1.09h-15.34A8.747,8.747,0,0,0,2913.05,3473.89Zm14.69-11.69h-15.46l-0.95,5.31h17.35Z"
-                                    transform="translate(-2901 -3459.5)" /></svg> -->
                         </div>
                         <div class="content">
                             <h1>Valores</h1>
@@ -265,10 +246,10 @@
 
             </div>
         </section>
-        <!-- End of .about -->
 
-        <section id="services" class="form laranja" style="padding-top:470px">
-          <!-- Start of .header-bottom .services -->
+        <div class="anchor" id="exames"></div>
+        <section class="form laranja" style="padding-top:470px">
+
           <div class="services" style="bottom:-73px; top:53px">
               <div class="container">
 
@@ -296,18 +277,14 @@
                   </div>
               </div>
           </div>
-          <!-- End of .services -->
         </section>
 
-        <!-- Start of .emergency-call-2 -->
-        <section id="checkup" class="emergency-call-2">
+        <div class="anchor" id="checkup"></div>
+        <section class="emergency-call-2">
             <div class="emergency-call-2__bg">
             </div>
             <div class="container">
-
                 <h1 class="section-title section-title_60 section-title_white">FAÇA SEU<br>CHECK-UP ANUAL</h1>
-                <!-- <h3>Need an emengency help?</h3> -->
-
                 <div class="checkup">
                   <div class="row">
                     <h5><i class="fa fa-check-circle"></i> Exames de sangue</h5>
@@ -325,9 +302,9 @@
                 <a href="departments-details_right.html" class="btn btn-2_pink">AGENDE SUA CONSULTA</a>
             </div>
         </section>
-        <!-- End of .emergency-call-2 -->
-        <section id="equipe" class="form" style="padding-top:470px; padding-bottom: 210px;">
-          <!-- Start of .header-bottom .services -->
+        <div class="anchor" id="equipe" style="height: 60px; margin-top: -60px;"></div>
+
+        <section class="form" style="padding-top:470px; padding-bottom: 210px;">
           <div class="services" style="bottom:-73px; top:53px;">
 
             <div class="container" style="padding:0; justify-content: flex-start;">
@@ -353,10 +330,10 @@
                   </div>
                   </div>
                 </div>
-          <!-- End of .services -->
         </section>
 
-        <section id="convenio" class="form laranja" style="padding-top:470px">
+        <div class="anchor" id="convenio"></div>
+        <section class="form laranja" style="padding-top:470px">
           <!-- Start of .header-bottom .services -->
           <div class="services" style="bottom:-73px; top:53px;">
 
@@ -374,9 +351,6 @@
                                 <img onclick="redirecionar('{{ $convenio->link }}')" src="{{ asset('uploads/convenios/'. ($convenio->logo)) }}">
 
                               </div>
-                              <!-- <div class="navbar__right">
-                                  <a href="{{ $convenio->link }}" class="btn btn_pink">Site</a>
-                              </div> -->
                               <h1 class="services__item-title"> </h1>
                               <p class="services__item-text"> </p>
                           </div>
@@ -387,15 +361,14 @@
                   </div>
               </div>
           </div>
-          <!-- End of .services -->
         </section>
-        <!-- Mapa -->
-        <section class="mapa" id="mapa">
+        <div class="anchor" id="localizacao"></div>
+        <section class="mapa">
             <div class="content">
               <div class="row">
               <div class="googlemaps col-6 nopadding">
                 <iframe src="https://snazzymaps.com/embed/390311" width="100%" height="100%" style="border:none;">
-                  <p>TESTE</p>
+
                 </iframe>
               </div>
               <div class="localizacao-imagem col-6 nopadding">
@@ -409,14 +382,13 @@
             </div>
 
         </section>
-        <!-- Start of .footer -->
-        <footer class="footer">
 
-            <!-- Start of .footer__top -->
+        <footer class="footer">
             <div class="footer__top">
                 <div class="footer__logo">
                     <img src="../site/images/logo-branca.png" alt="footer-logo">
                 </div>
+                <div class="mapa anchor" id="contato"></div>
                 <div class="container">
                     <div>
                         <div class="footer__top-blocks">
@@ -442,20 +414,7 @@
                                                 transform="translate(-1024.31 -352)" style="fill: #9a0000;"/></svg>
                                     </div>
                                     <div class="text">
-                                        <?php
-                                          $endereco_inteiro = ( $quemsomos->endereco_matriz );
-                                          $endereco_tamanho = strlen($endereco_inteiro);
-                                          $endereco_tamanho_1 = $endereco_tamanho / 2;
-                                          $endereco_tamanho_2 = $endereco_tamanho_1;
-                                          if ($endereco_tamanho % 2 <> 0) {
-                                            $endereco_tamanho_1 = $endereco_tamanho_1 - 0.5;
-                                            $endereco_tamanho_2 = $endereco_tamanho_2 + 0.5;
-                                          }
-                                          $endereco_metade_1 = substr($endereco_inteiro, 0, $endereco_tamanho_1);
-                                          $endereco_metade_2 = substr($endereco_inteiro, $endereco_tamanho_1, $endereco_tamanho_2);
-                                        ?>
-                                        <a href="">{!! !empty($quemsomos->endereco_matriz) ? $endereco_metade_1 : 'Rua Alagoas, 198 - ' !!}</a>
-                                        <a href="">{!! !empty($quemsomos->endereco_matriz) ? $endereco_metade_2 : 'Juçara - Imperatriz' !!}</a>
+                                      <a href="{!! !empty($quemsomos->endereco_matriz_link) ? $quemsomos->endereco_matriz_link : '' !!}">{!! !empty($quemsomos->endereco_matriz) ? $quemsomos->endereco_matriz : 'Rua Alagoas, 198 - ' !!}</a>
                                     </div>
 
                                 </div>
@@ -480,10 +439,6 @@
                                 <ul class="work-date">
                                     <h6><span>Segunda a sexta-feira</span></h6>
                                     <p><b>08h às 18h</b></p>
-                                    <h6><span>Sábado</span></h6>
-                                    <p><b>08h às 12h</b></p>
-                                    <h6><span>Domingo</span></h6>
-                                    <p><b>Fechado</b></p>
                                 </ul>
                               </div>
                             </div>
@@ -533,17 +488,12 @@
                     </div>
                 </div>
             </div>
-            <!-- End of .footer__top -->
 
-            <!-- Start of .footer__bottom -->
             <div class="footer__bottom">
                 <p>Copyright &copy; <?php echo date("Y"); ?> CLINIVIDA | Todos os direitos reservados.</p>
             </div>
-            <!-- End of .footer__bottom -->
 
         </footer>
-        <!-- End of .footer -->
-
     </div>
 
     <!------------------------------------------------------------------------>
@@ -566,46 +516,9 @@
         </form>
     </div>
 
-    <!-- Popup Form -->
-    <div class="popup-form">
-        <div class="inner-block">
-            <span class="popup-form-close" id="popup-form-close">&times;</span>
-            <div class="img">
-                <img src="../site/images/jpg/popup-form.jpg">
-            </div>
-            <form>
-                <h1 class="section-title">make an appointment</h1>
-                <div class="input-box">
-                    <label for="popup-name">Name *</label>
-                    <input type="text" id="popup-name" required>
-                </div>
 
-                <div class="input-box">
-                    <label for="popup-email">Email *</label>
-                    <input type="text" id="popup-email" required>
-                </div>
-
-                <div class="input-box">
-                    <label for="popup-phone">Phone *</label>
-                    <input type="tel" id="popup-phone" required>
-                </div>
-
-                <div class="select-box">
-                    <i class="fa fa-angle-down"></i>
-                    <select>
-                        <option selected>Department</option>
-                        <option selected>Department2</option>
-                        <option selected>Department3</option>
-                        <option selected>Department4</option>
-                    </select>
-                </div>
-                <button type="submit" class="btn btn-2_pink">send</button>
-            </form>
-        </div>
-    </div>
 
 		</body>
-    <!-- Scripts + Jquery plagins -->
 
     <script>
       function redirecionar(link) {
@@ -613,14 +526,11 @@
       }
     </script>
 			@include('partials._scripts')
-    <!-- owl-carousel js -->
     <script src="../site/js/owl.carousel.min.js"></script>
     <script src="../site/js/carousel.js"></script>
 
-    <!-- fancybox 3 js -->
     <script src="../site/js/jquery.fancybox.js"></script>
 
-    <!-- Counter up -->
     <script src="../site/js/jquery.waypoints.min.js"></script>
     <script src="../site/js/jquery.countup.min.js"></script>
 
