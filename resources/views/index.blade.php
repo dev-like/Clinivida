@@ -66,7 +66,20 @@
                                 d="M1033.75,377.71l-7.99-11.282a9.433,9.433,0,1,1,16-.04Zm0-24.133a7.845,7.845,0,0,0-6.68,11.983l6.68,9.43,6.7-9.468A7.841,7.841,0,0,0,1033.75,353.577Zm0,11.78a3.927,3.927,0,1,1,3.93-3.928A3.931,3.931,0,0,1,1033.75,365.357Zm0-6.283a2.356,2.356,0,1,0,2.36,2.355A2.362,2.362,0,0,0,1033.75,359.074Z"
                                 transform="translate(-1024.31 -352)" /></svg>
                         <div class="header-top__call-text">
-                            <p{!! !empty($quemsomos->endereco_matriz) ? ( $quemsomos->endereco_matriz ) : 'Rua Alagoas, 198 - Juçara - Imperatriz' !!}</p>
+                          <?php
+                            $endereco_inteiro = ( $quemsomos->endereco_matriz );
+                            $endereco_tamanho = strlen($endereco_inteiro);
+                            $endereco_tamanho_1 = $endereco_tamanho / 2;
+                            $endereco_tamanho_2 = $endereco_tamanho_1;
+                            if ($endereco_tamanho % 2 <> 0) {
+                              $endereco_tamanho_1 = $endereco_tamanho_1 - 0.5;
+                              $endereco_tamanho_2 = $endereco_tamanho_2 + 0.5;
+                            }
+                            $endereco_metade_1 = substr($endereco_inteiro, 0, $endereco_tamanho_1);
+                            $endereco_metade_2 = substr($endereco_inteiro, $endereco_tamanho_1, $endereco_tamanho_2);
+                          ?>
+                          <a href="">{!! !empty($quemsomos->endereco_matriz) ? $endereco_metade_1 : 'Rua Alagoas, 198 - ' !!}</a>
+                          <a href="">{!! !empty($quemsomos->endereco_matriz) ? $endereco_metade_2 : 'Juçara - Imperatriz' !!}</a>
 
                         </div>
                     </div>
@@ -125,7 +138,7 @@
                     </ul>
 
                     <div class="navbar__right">
-                        <a href="#" class="btn btn_pink" id="popup-form-open">AGENDE SUA CONSULTA</a>
+                        <a href="https://api.whatsapp.com/send?phone=99991601011" class="btn btn_pink">AGENDE SUA CONSULTA</a>
 
                     </div>
                 </div>
@@ -206,10 +219,7 @@
                 <div class="about__text wow fadeInRight" data-wow-duration="1s">
                     <h4>Nossa história</h4>
                     <h1 class="section-title">Quem somos</h1>
-                    <p>{!! !empty($quemsomos->quemsomos) ? ($quemsomos->quemsomos) : 'A CLINIVIDA surgiu com o objetivo de cuidar de você. Nosso espaço foi planejado e projetado para seu conforto e bem-estar! <br> <br>
-
-Contamos com especialistas em clínica médica, endoscopia digestiva e bariátrica, cirurgia geral, endocrinologia, nutrição, psicologia, ultrassonografia, exames laboratoriais e bioimpedância. <br>
-Um atendimento completo para você realizar tudo em um só lugar!' !!}</p>
+                    <p>{!! !empty($quemsomos->quemsomos) ? ($quemsomos->quemsomos) : ' <br> A CLINIVIDA surgiu com o objetivo de cuidar de você. Nosso espaço foi planejado e projetado para seu conforto e bem-estar! <br> <br> Contamos com especialistas em clínica médica, endoscopia digestiva e bariátrica, cirurgia geral, endocrinologia, nutrição, psicologia, ultrassonografia, exames laboratoriais e bioimpedância. <br> Um atendimento completo para você realizar tudo em um só lugar!' !!}</p>
 
                 </div>
                 <div class="emergency-call__items" style="padding-top:50px;">
@@ -221,7 +231,6 @@ Um atendimento completo para você realizar tudo em um só lugar!' !!}</p>
                         <div class="content">
                             <h1>Missão</h1>
                             <p>{!! !empty($quemsomos->missao) ? ($quemsomos->missao) : 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard.' !!}</p>
-
                         </div>
                     </div>
 
@@ -294,7 +303,7 @@ Um atendimento completo para você realizar tudo em um só lugar!' !!}</p>
         </section>
 
         <!-- Start of .emergency-call-2 -->
-        <section class="emergency-call-2">
+        <section id="checkup" class="emergency-call-2">
             <div class="emergency-call-2__bg">
             </div>
             <div class="container">
@@ -302,47 +311,54 @@ Um atendimento completo para você realizar tudo em um só lugar!' !!}</p>
                 <h1 class="section-title section-title_60 section-title_white">FAÇA SEU<br>CHECK-UP ANUAL</h1>
                 <!-- <h3>Need an emengency help?</h3> -->
 
-                <h5>Exames de sangue</h5>
-                <h5>Aferição de pressão arterial</h5>
-                <h5>Eletrocardiograma</h5>
-                <h5>Exames de imagem</h5>
-                <h5>Exames de dosagens hormonais</h5>
+                <div class="checkup">
+                  <div class="row">
+                    <h5><i class="fa fa-check-circle"></i> Exames de sangue</h5>
+                    <h5 class="second"><i class="fa fa-check-circle">   </i> Aferição de pressão arterial</h5>
+                  </div>
+                  <div class="row">
+                    <h5><i class="fa fa-check-circle"></i> Eletrocardiograma</h5>
+                    <h5 class="second"><i class="fa fa-check-circle">   </i> Exames de imagem</h5>
+                  </div>
+                  <div class="row">
+                    <h5><i class="fa fa-check-circle"></i> Exames de dosagens hormonais</h5>
+                  </div>
+                </div>
 
                 <a href="departments-details_right.html" class="btn btn-2_pink">AGENDE SUA CONSULTA</a>
             </div>
         </section>
         <!-- End of .emergency-call-2 -->
-        <section id="equipe" class="form" style="padding-top:470px;">
+        <section id="equipe" class="form" style="padding-top:470px; padding-bottom: 210px;">
           <!-- Start of .header-bottom .services -->
           <div class="services" style="bottom:-73px; top:53px;">
 
             <div class="container" style="padding:0; justify-content: flex-start;">
-              <h3>Nossa equipe</h3>
+              <h3 style="color: #d85f19 !important;">Nossa equipe</h3>
             </div>
               <div class="container">
-                  <div class="services__items owl-carousel owl-theme exames">
-
-                    @foreach($equipes as $equipe)
-
-                      <div class="services__outer-item">
-                          <div class="services__item">
-                              <div class="services__item-icon">
-                                <img src="{{ asset('uploads/equipes/'. ($equipe->image)) }}">
-                                  <!-- <svg width="53.03" height="44" viewBox="0 0 53.03 44">
-                                      <path id="service-icon3.svg" class="cls-2"
-                                          d="M2421.76,1346a3.507,3.507,0,0,1-1.17-.2c-2.79-.97-3.24-4.42-3.73-8.07-0.66-4.93-1.29-7.12-3.34-7.12a1.665,1.665,0,1,1,0-3.33c5.37,0,6.14,5.79,6.7,10.02,0.26,1.9.68,5.08,1.51,5.37h0a3.451,3.451,0,0,0,1.95-.93c4.64-3.34,12.09-14.39,12.88-22.81a14.03,14.03,0,0,0-2.99-10.61,8.62,8.62,0,0,0-6.11-3.01c-2.33-.13-5.2.71-7.95,1.63a1.708,1.708,0,0,1-2.16-1.04,1.656,1.656,0,0,1,1.06-2.11c3.55-1.19,6.49-1.94,9.24-1.8a11.97,11.97,0,0,1,8.49,4.16,17.3,17.3,0,0,1,3.8,13.09c-0.94,10.03-9.57,22.28-14.93,25.64A6.185,6.185,0,0,1,2421.76,1346Zm-16.47,0a6.215,6.215,0,0,1-3.26-1.12c-5.36-3.36-13.99-15.61-14.92-25.64-0.44-4.72.75-8.94,3.36-11.9a12.448,12.448,0,0,1,8.93-4.18,18.406,18.406,0,0,1,5.63.71c1.97,0.5,3.72,1.14,5.58,1.81a42.83,42.83,0,0,0,15.06,3.15,1.666,1.666,0,1,1-.08,3.33,46.47,46.47,0,0,1-16.15-3.36c-1.78-.64-3.46-1.25-5.27-1.71a15.182,15.182,0,0,0-4.58-.61,9.141,9.141,0,0,0-6.56,3.03c-2,2.27-2.9,5.61-2.54,9.42,0.78,8.42,8.23,19.47,12.87,22.81a3.691,3.691,0,0,0,1.96.93c0.88-.31,1.39-3.62,1.7-5.59,0.67-4.37,1.51-9.8,6.5-9.8a1.665,1.665,0,1,1,0,3.33c-1.93,0-2.52,2.89-3.15,6.96-0.57,3.73-1.12,7.26-3.92,8.23A3.492,3.492,0,0,1,2405.29,1346Z"
-                                          transform="translate(-2387 -1302)" /></svg> -->
-                              </div>
-                              <h1 class="services__item-title">{{ $equipe->nome }}</h1>
-                              <p class="services__item-text">{{ $equipe->descricao }}</p>
+                <div class="services__items owl-carousel owl-theme exames">
+                  @foreach($equipes as $equipe)
+                    <div class="services__outer-item">
+                      <div class="services__item" style="height: 470px; justify-content: space-between;">
+                          <div class="services__item-icon" style="margin-top: 0;">
+                            <img src="{{ asset('uploads/equipes/'. ($equipe->image)) }}">
+                              <!-- <svg width="53.03" height="44" viewBox="0 0 53.03 44">
+                                  <path id="service-icon3.svg" class="cls-2"
+                                      d="M2421.76,1346a3.507,3.507,0,0,1-1.17-.2c-2.79-.97-3.24-4.42-3.73-8.07-0.66-4.93-1.29-7.12-3.34-7.12a1.665,1.665,0,1,1,0-3.33c5.37,0,6.14,5.79,6.7,10.02,0.26,1.9.68,5.08,1.51,5.37h0a3.451,3.451,0,0,0,1.95-.93c4.64-3.34,12.09-14.39,12.88-22.81a14.03,14.03,0,0,0-2.99-10.61,8.62,8.62,0,0,0-6.11-3.01c-2.33-.13-5.2.71-7.95,1.63a1.708,1.708,0,0,1-2.16-1.04,1.656,1.656,0,0,1,1.06-2.11c3.55-1.19,6.49-1.94,9.24-1.8a11.97,11.97,0,0,1,8.49,4.16,17.3,17.3,0,0,1,3.8,13.09c-0.94,10.03-9.57,22.28-14.93,25.64A6.185,6.185,0,0,1,2421.76,1346Zm-16.47,0a6.215,6.215,0,0,1-3.26-1.12c-5.36-3.36-13.99-15.61-14.92-25.64-0.44-4.72.75-8.94,3.36-11.9a12.448,12.448,0,0,1,8.93-4.18,18.406,18.406,0,0,1,5.63.71c1.97,0.5,3.72,1.14,5.58,1.81a42.83,42.83,0,0,0,15.06,3.15,1.666,1.666,0,1,1-.08,3.33,46.47,46.47,0,0,1-16.15-3.36c-1.78-.64-3.46-1.25-5.27-1.71a15.182,15.182,0,0,0-4.58-.61,9.141,9.141,0,0,0-6.56,3.03c-2,2.27-2.9,5.61-2.54,9.42,0.78,8.42,8.23,19.47,12.87,22.81a3.691,3.691,0,0,0,1.96.93c0.88-.31,1.39-3.62,1.7-5.59,0.67-4.37,1.51-9.8,6.5-9.8a1.665,1.665,0,1,1,0,3.33c-1.93,0-2.52,2.89-3.15,6.96-0.57,3.73-1.12,7.26-3.92,8.23A3.492,3.492,0,0,1,2405.29,1346Z"
+                                      transform="translate(-2387 -1302)" /></svg> -->
                           </div>
+                          <div>
+                          <h1 class="services__item-title" style="font-family: 'Montserrat Alternates Bold'; margin-top: 200px; margin-bottom: 0; font-size: 19px">{{ $equipe->nome }}</h1>
+                          <p class="services__item-text" style="font-family: 'Montserrat Alternates Medium'; margin-top: 0px; color: #d85f19 !important;">{{ $equipe->especialidade }}</p>
+                        </div>
+                          <p class="services__item-text">{{ $equipe->descricao }}</p>
+                        </div>
                       </div>
-
-                      @endforeach
-
+                    @endforeach
                   </div>
-              </div>
-          </div>
+                  </div>
+                </div>
           <!-- End of .services -->
         </section>
 
@@ -360,15 +376,18 @@ Um atendimento completo para você realizar tudo em um só lugar!' !!}</p>
 
                       <div class="services__outer-item">
                           <div class="services__item">
-                              <div class="services__item-icon">
-                                <img src="{{ asset('uploads/convenios/'. ($convenio->image)) }}">
+                              <div class="services__item-icon" style="height: 160px;">
+                                <img href="{{ $convenio->link }}" src="{{ asset('uploads/convenios/'. ($convenio->logo)) }}">
                                   <!-- <svg width="53.03" height="44" viewBox="0 0 53.03 44">
                                       <path id="service-icon3.svg" class="cls-2"
                                           d="M2421.76,1346a3.507,3.507,0,0,1-1.17-.2c-2.79-.97-3.24-4.42-3.73-8.07-0.66-4.93-1.29-7.12-3.34-7.12a1.665,1.665,0,1,1,0-3.33c5.37,0,6.14,5.79,6.7,10.02,0.26,1.9.68,5.08,1.51,5.37h0a3.451,3.451,0,0,0,1.95-.93c4.64-3.34,12.09-14.39,12.88-22.81a14.03,14.03,0,0,0-2.99-10.61,8.62,8.62,0,0,0-6.11-3.01c-2.33-.13-5.2.71-7.95,1.63a1.708,1.708,0,0,1-2.16-1.04,1.656,1.656,0,0,1,1.06-2.11c3.55-1.19,6.49-1.94,9.24-1.8a11.97,11.97,0,0,1,8.49,4.16,17.3,17.3,0,0,1,3.8,13.09c-0.94,10.03-9.57,22.28-14.93,25.64A6.185,6.185,0,0,1,2421.76,1346Zm-16.47,0a6.215,6.215,0,0,1-3.26-1.12c-5.36-3.36-13.99-15.61-14.92-25.64-0.44-4.72.75-8.94,3.36-11.9a12.448,12.448,0,0,1,8.93-4.18,18.406,18.406,0,0,1,5.63.71c1.97,0.5,3.72,1.14,5.58,1.81a42.83,42.83,0,0,0,15.06,3.15,1.666,1.666,0,1,1-.08,3.33,46.47,46.47,0,0,1-16.15-3.36c-1.78-.64-3.46-1.25-5.27-1.71a15.182,15.182,0,0,0-4.58-.61,9.141,9.141,0,0,0-6.56,3.03c-2,2.27-2.9,5.61-2.54,9.42,0.78,8.42,8.23,19.47,12.87,22.81a3.691,3.691,0,0,0,1.96.93c0.88-.31,1.39-3.62,1.7-5.59,0.67-4.37,1.51-9.8,6.5-9.8a1.665,1.665,0,1,1,0,3.33c-1.93,0-2.52,2.89-3.15,6.96-0.57,3.73-1.12,7.26-3.92,8.23A3.492,3.492,0,0,1,2405.29,1346Z"
                                           transform="translate(-2387 -1302)" /></svg> -->
                               </div>
-                              <h1 class="services__item-title">{{ $convenio->nome }}</h1>
-                              <p class="services__item-text">{{ $convenio->descricao }}</p>
+                              <div class="navbar__right">
+                                  <a href="{{ $convenio->link }}" class="btn btn_pink">Site</a>
+                              </div>
+                              <h1 class="services__item-title"> </h1>
+                              <p class="services__item-text"> </p>
                           </div>
                       </div>
 
@@ -417,11 +436,11 @@ Um atendimento completo para você realizar tudo em um só lugar!' !!}</p>
                                         <svg width="24.375" height="24.343" viewBox="0 0 24.375 24.343">
                                             <path id="phone.svg" class="header-top__call-icon cls-1"
                                                 d="M831.817,365.478a10.864,10.864,0,0,0-10.852-10.851v-1.55a12.416,12.416,0,0,1,12.4,12.4h-1.551Zm-6.2,0a4.656,4.656,0,0,0-4.651-4.651v-1.55a6.208,6.208,0,0,1,6.2,6.2h-1.55Zm-4.651-9.3a9.312,9.312,0,0,1,9.3,9.3h-1.551a7.759,7.759,0,0,0-7.751-7.751v-1.55Zm3.779,13.4,1.938-1.937a0.578,0.578,0,0,1,.064-0.058,1.924,1.924,0,0,1,2.511-.006,0.72,0.72,0,0,1,.071.064l3.488,3.487a1.871,1.871,0,0,1,0,2.646l-2.325,2.326a5.527,5.527,0,0,1-3.942,1.314c-3.14,0-7.446-1.609-11.712-5.8l0.41-.418-0.417.41a19.929,19.929,0,0,1-5.5-9.163c-0.666-2.764-.288-5.19,1.01-6.489l2.325-2.325a1.917,1.917,0,0,1,2.647,0l3.488,3.488a0.8,0.8,0,0,1,.067.077,1.879,1.879,0,0,1-.009,2.5c-0.018.022-.038,0.043-0.058,0.064l-1.938,1.937a1.419,1.419,0,0,0,0,2l2.938,2.937h0l2.94,2.94A1.42,1.42,0,0,0,824.744,369.578Zm6.522,3.554,0.454-.454a0.322,0.322,0,0,0,0-.454l-3.434-3.433c-0.017-.015-0.034-0.029-0.049-0.045a0.277,0.277,0,0,0-.464,0c-0.015.014-.03,0.029-0.046,0.042l-0.4.4ZM817.25,359.116l0.4-.4a0.447,0.447,0,0,1,.042-0.045,0.328,0.328,0,0,0,0-.464,0.652,0.652,0,0,1-.05-0.055l-3.429-3.429a0.323,0.323,0,0,0-.455,0l-0.454.454Zm1.456,8.621h0l-2.94-2.94a2.97,2.97,0,0,1,0-4.2l0.388-.388-3.943-3.941-0.775.774c-0.9.9-1.129,2.827-.6,5.029A20.532,20.532,0,0,0,824.366,375.6c2.2,0.531,4.129.3,5.029-.6l0.775-.775-3.942-3.942-0.388.388a2.971,2.971,0,0,1-4.2,0Z"
-                                                transform="translate(-809 -353.063)" /></svg>
+                                                transform="translate(-809 -353.063)" style="fill: #9a0000;"/></svg>
                                     </div>
                                     <div class="text">
-                                        <a href="tel:+18004567890">+1 800 456 7890</a>
-                                        <a href="tel:+18004567890">+1 800 456 7890</a>
+                                        <a href="tel:{!! !empty($quemsomos->telefone) ? ( $quemsomos->telefone ) : '(99) 99160-1011' !!}">{!! !empty($quemsomos->telefone) ? ($quemsomos->telefone) : '(99) 99160-1011' !!}</a>
+                                        <a href="tel:{!! !empty($quemsomos->telefone2) ? ( $quemsomos->telefone2 ) : '(99) 3071-2081' !!}">{!! !empty($quemsomos->telefone2) ? ($quemsomos->telefone2) : '(99) 3071-2081' !!}</a>
                                     </div>
                                 </div>
                                 <div class="content-item">
@@ -429,11 +448,23 @@ Um atendimento completo para você realizar tudo em um só lugar!' !!}</p>
                                         <svg width="18.88" height="25.719" viewBox="0 0 18.88 25.719">
                                             <path id="address.svg" class="header-top__call-icon cls-1"
                                                 d="M1033.75,377.71l-7.99-11.282a9.433,9.433,0,1,1,16-.04Zm0-24.133a7.845,7.845,0,0,0-6.68,11.983l6.68,9.43,6.7-9.468A7.841,7.841,0,0,0,1033.75,353.577Zm0,11.78a3.927,3.927,0,1,1,3.93-3.928A3.931,3.931,0,0,1,1033.75,365.357Zm0-6.283a2.356,2.356,0,1,0,2.36,2.355A2.362,2.362,0,0,0,1033.75,359.074Z"
-                                                transform="translate(-1024.31 -352)" /></svg>
+                                                transform="translate(-1024.31 -352)" style="fill: #9a0000;"/></svg>
                                     </div>
                                     <div class="text">
-                                        <a href="tel:+18004567890">+1 800 456 7890</a>
-                                        <a href="tel:+18004567890">+1 800 456 7890</a>
+                                        <?php
+                                          $endereco_inteiro = ( $quemsomos->endereco_matriz );
+                                          $endereco_tamanho = strlen($endereco_inteiro);
+                                          $endereco_tamanho_1 = $endereco_tamanho / 2;
+                                          $endereco_tamanho_2 = $endereco_tamanho_1;
+                                          if ($endereco_tamanho % 2 <> 0) {
+                                            $endereco_tamanho_1 = $endereco_tamanho_1 - 0.5;
+                                            $endereco_tamanho_2 = $endereco_tamanho_2 + 0.5;
+                                          }
+                                          $endereco_metade_1 = substr($endereco_inteiro, 0, $endereco_tamanho_1);
+                                          $endereco_metade_2 = substr($endereco_inteiro, $endereco_tamanho_1, $endereco_tamanho_2);
+                                        ?>
+                                        <a href="">{!! !empty($quemsomos->endereco_matriz) ? $endereco_metade_1 : 'Rua Alagoas, 198 - ' !!}</a>
+                                        <a href="">{!! !empty($quemsomos->endereco_matriz) ? $endereco_metade_2 : 'Juçara - Imperatriz' !!}</a>
                                     </div>
 
                                 </div>
@@ -442,10 +473,10 @@ Um atendimento completo para você realizar tudo em um só lugar!' !!}</p>
                                         <svg width="25.16" height="25.157" viewBox="0 0 25.16 25.157">
                                             <path id="envelope.svg" class="header-top__call-icon cls-1"
                                                 d="M1239.84,377.423v-16.85l3.15-2.723v-5.556h18.87v5.556l3.14,2.723v16.85h-25.16Zm22.48-1.57-6.57-6.557-3.33,2.884-3.33-2.884-6.56,6.557h19.79Zm-20.91-1.11,6.49-6.478-6.49-5.614v12.092Zm1.58-14.814-1.16,1,1.16,1v-2.005Zm17.29,3.359v-9.424h-15.72v9.424h-0.01l7.87,6.813,7.87-6.813h-0.01Zm1.58-3.359v2.005l1.15-1Zm1.57,2.722-6.49,5.614,6.49,6.478V362.651Zm-11.8-4.076h1.58v1.571h-1.58v-1.571Zm4.72,1.571h-1.57v-1.571h1.57v1.571Zm-7.86-1.571h1.57v1.571h-1.57v-1.571Z"
-                                                transform="translate(-1239.84 -352.281)" /> </svg>
+                                                transform="translate(-1239.84 -352.281)" style="fill: #9a0000;"/> </svg>
                                     </div>
                                     <div class="text">
-                                        <a href="mailto:inbox@medihelp.com">inbox@medihelp.com</a>
+                                        <a href="mailto:{!! !empty($quemsomos->email) ? ($quemsomos->email) : 'contato@clinividaitz.com.br' !!}">{!! !empty($quemsomos->email) ? ($quemsomos->email) : 'contato@clinividaitz.com.br' !!}</a>
                                     </div>
                                 </div>
                             </div>
@@ -454,11 +485,18 @@ Um atendimento completo para você realizar tudo em um só lugar!' !!}</p>
                         <div class="footer__top-blocks">
                             <h1 class="title">HORÁRIOS</h1>
                             <div class="content">
+                              <div class="content-item">
                                 <ul class="work-date">
-                                    <li><span>Mon - Thu</span><b>08:00 - 18:00</b></li>
+                                    <h6><span>Segunda a sexta-feira</span></h6>
+                                    <p><b>08h às 18h</b></p>
+                                    <h6><span>Sábado</span></h6>
+                                    <p><b>08h às 12h</b></p>
+                                    <h6><span>Domingo</span></h6>
+                                    <p><b>Fechado</b></p>
                                 </ul>
+                              </div>
                             </div>
-                        </div>
+                          </div>
                     </div>
 
                     <div>
@@ -469,14 +507,15 @@ Um atendimento completo para você realizar tudo em um só lugar!' !!}</p>
                                 </p>
                                 <form>
                                     <div class="email">
-                                        <input type="email" placeholder="Email Addres">
+                                        <input type="email" placeholder="Trabalhe conosco...">
                                         <button type="submit"><i class="fa fa-send"></i></button>
                                     </div>
                                 </form>
                                 <div class="socials">
-                                    <a href="#" title="facebook"><i class="fa fa-facebook"></i></a>
-                                    <a href="#" title="twitter"><i class="fa fa-twitter"></i></a>
-                                    <a href="#" title="instagram"><i class="fa fa-instagram"></i></a>
+                                    <?php
+                                      if (!empty($quemsomos->facebook)) { echo ('<a href="'.$quemsomos->facebook.'" title="facebook"><i class="fa fa-facebook"></i></a>'); }
+                                      if (!empty($quemsomos->instagram)) { echo ('<a href="'.$quemsomos->facebook.'" title="instagram"><i class="fa fa-instagram"></i></a>'); }
+                                    ?>
                                 </div>
                             </div>
                         </div>
@@ -486,16 +525,16 @@ Um atendimento completo para você realizar tudo em um só lugar!' !!}</p>
                             <div class="content">
                                 <ul class="menu">
                                     <li>
-                                        <a href="#about"><i class="fa fa-angle-right"></i>Agende sua consulta</a>
+                                        <a href="#checkup"><i class="fa fa-angle-right"></i>Agende sua consulta</a>
                                     </li>
                                     <li>
-                                        <a href="#departments"><i class="fa fa-angle-right"></i>Convênios</a>
+                                        <a href="#convenio"><i class="fa fa-angle-right"></i>Convênios</a>
                                     </li>
                                     <li>
-                                        <a href="#services"><i class="fa fa-angle-right"></i>Localização</a>
+                                        <a href="#mapa"><i class="fa fa-angle-right"></i>Localização</a>
                                     </li>
                                     <li>
-                                        <a href="#why-us"><i class="fa fa-angle-right"></i>Nossos exames</a>
+                                        <a href="#services"><i class="fa fa-angle-right"></i>Nossos exames</a>
                                     </li>
                                 </ul>
                             </div>
@@ -507,7 +546,7 @@ Um atendimento completo para você realizar tudo em um só lugar!' !!}</p>
 
             <!-- Start of .footer__bottom -->
             <div class="footer__bottom">
-                <p>Copyright &copy; <?php echo date("Y"); ?> | Todos os direitos reservados.</p>
+                <p>Copyright &copy; <?php echo date("Y"); ?> CLINIVIDA | Todos os direitos reservados.</p>
             </div>
             <!-- End of .footer__bottom -->
 

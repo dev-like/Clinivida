@@ -189,13 +189,13 @@ $("document").ready(function ($) {
                 nav: true,
                 margin: 10,
             },
-            
+
             768: {
                 items: 2,
                 dots: true,
                 nav: false,
             },
-            
+
             992: {
                 items: 3,
                 dots: true,
@@ -211,7 +211,7 @@ $("document").ready(function ($) {
             },
         }
     });
-    
+
     /*------------------------- Home page 2 -------------------------*/
 
     // .header-bottom__banner-2
@@ -278,7 +278,7 @@ $("document").ready(function ($) {
         }
     });
 
-    // .specialists-2__carousel 
+    // .specialists-2__carousel
     $specialists2Carousel.owlCarousel({
         loop: true,
         margin: 40,
@@ -475,7 +475,7 @@ $("document").ready(function ($) {
                 dots: true,
                 nav: false,
             },
-            
+
             1300: {
                 nav: true,
             }

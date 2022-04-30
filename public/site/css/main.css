@@ -33,6 +33,7 @@ These are css styles, others're attached
   background-color: #f0f0f0;
   color:#333333;
 }
+
 .exames .cls-2{
   fill: #d85f19;
 }
@@ -5656,14 +5657,17 @@ a:hover {
 }
 
 .services__item-title {
-  font-size: 32px;
-  font-family: "Montserrat Alternates Bold";
-  margin-bottom: 5px;
+  font-size: 22px;
+  font-family: "Montserrat Alternates Medium";
+  margin-bottom: 15px;
+  margin-top: 15px;
 }
 
 .services__item-text {
   font-weight: 100;
-  font-size: 15.5px;
+  font-size: 14.3px;
+  margin-left: 18px;
+  margin-right: 18px;
 }
 
 .services .owl-item .services__outer-item {
@@ -5758,12 +5762,26 @@ a:hover {
 }
 
 /**************************************************/
+/* .checkup */
+/**************************************************/
+.checkup {
+  margin-top: 40px;
+  margin-left: 15px;
+  margin-bottom: 50px;
+  color: #d85f19 !important;
+}
+
+.checkup .second {
+  margin-left: 27px;
+}
+
+/**************************************************/
 /* .about */
 /**************************************************/
 .about {
   position: relative;
   padding-top: 350px;
-  padding-bottom: 160px;
+  padding-bottom: 0px;
   z-index: 9;
 }
 
@@ -7551,7 +7569,7 @@ a:hover {
 }
 
 .footer .container > div:last-child > .footer__top-blocks:nth-child(1) .content .socials > a .fa:hover {
-  color: #d85f19;
+  color: #9a0000;
 }
 
 .footer .container > div:last-child > .footer__top-blocks:nth-child(2) .content .menu {
