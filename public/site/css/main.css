@@ -17563,7 +17563,7 @@ body {
   .form {
     min-height: initial;
     padding-top: 100px;
-    padding-bottom: 100px;
+    /* padding-bottom: 100px; */
   }
   .form__bg > .circle-blue {
     display: none;
@@ -19541,7 +19541,7 @@ body {
   /*---------- Start .form responsive ----------*/
   .form {
     padding-top: 70px;
-    padding-bottom: 70px;
+    padding-bottom: 30px;
   }
   .form__block textarea, .form__block-input {
     margin-bottom: 20px;
@@ -20695,6 +20695,7 @@ body {
         -ms-flex: 0 0 100%;
             flex: 0 0 100%;
     max-width: 100%;
+    margin-left: 20px;
   }
   .form__block {
     -webkit-box-flex: 0;
