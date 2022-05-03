@@ -1,8 +1,25 @@
-
 .navbar-expand-lg {
   /* justify-content: right; */
   padding-left: 30px;
   padding-right: 30px;
+}
+
+@media (min-width: 1020px) {
+  .navbar-expand-lg {
+    display: none;
+  }
+}
+
+@media (max-width: 1020px) {
+  .header-middle {
+    display: none;
+  }
+}
+
+@media (max-width: 1199px) {
+  .header-middle {
+    margin-top: 80px;
+  }
 }
 
 .navbar-collapse {

@@ -4867,6 +4867,7 @@ a:hover {
 /* .header-middle */
 /**************************************************/
 .header-middle {
+  background-color: #fff !important;
   position: relative;
   z-index: 99;
   width: 100%;
@@ -17238,7 +17239,7 @@ body {
   padding-bottom: 30px;
 }
 
-@media (max-width: 1199px) {
+@media (max-width: 992px) {
   /*---------- Start .header-top responsive ----------*/
   .header-top {
     display: none;

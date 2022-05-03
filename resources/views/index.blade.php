@@ -139,7 +139,7 @@
             </div>
         </nav>
 
-        <!-- <header class="header-middle header-middle_white-transparent">
+        <header class="header-middle header-middle_white-transparent">
             <div class="container">
 
                 <div class="navbar-logo">
@@ -191,7 +191,7 @@
                 </div>
 
             </div>
-        </header> -->
+        </header>
 
         <header class="header-bottom">
 
