@@ -5383,7 +5383,7 @@ a:hover {
 }
 
 .header-bottom__banner .slide-item__title span {
-  font-weight: 900;
+  /* font-weight: 900; */
   font-family: "Pathways V2 Rough Regular";
   color: #fff;
   font-size: 100px;
@@ -6913,6 +6913,7 @@ a:hover {
 }
 
 .emergency-call__item {
+  padding: 15px;
   -webkit-box-flex: 0;
       -ms-flex: 0 0 370px;
           flex: 0 0 370px;
@@ -7542,7 +7543,7 @@ a:hover {
 
 .footer .container > div:last-child > .footer__top-blocks:nth-child(1) .content .text {
   font-size: 15.5px;
-  margin-bottom: 14px;
+  margin-bottom: 21px;
   line-height: 1.5;
 }
 
@@ -7554,7 +7555,8 @@ a:hover {
   height: 80px;
 }
 
-.footer .container > div:last-child > .footer__top-blocks:nth-child(1) .content form input {
+/* .footer .container > div:last-child > .footer__top-blocks:nth-child(1) .content form input {
+  cursor: pointer;
   border-radius: 8px;
   position: relative;
   top: 0;
@@ -7565,11 +7567,17 @@ a:hover {
   outline: none;
   border: none;
   font-size: 17px;
+  background-color: #d85f19;
+  border: 1px solid #fff;
+}
+
+.footer .container > div:last-child > .footer__top-blocks:nth-child(1) .content form input::placeholder {
+  color: #fff;
 }
 
 .footer .container > div:last-child > .footer__top-blocks:nth-child(1) .content form input:hover, .footer .container > div:last-child > .footer__top-blocks:nth-child(1) .content form input:focus, .footer .container > div:last-child > .footer__top-blocks:nth-child(1) .content form input:active {
   outline: 1px solid #d85f19;
-}
+} */
 
 .footer .container > div:last-child > .footer__top-blocks:nth-child(1) .content form button {
   cursor: pointer;

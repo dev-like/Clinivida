@@ -38,7 +38,7 @@
                 <!-- header-top__logo -->
                 <div class="header-top__logo">
                     <a href="{{url("/")}}">
-                        <img src="../site/images/logo.png" />
+                        <img style="width: 170px;" src="../site/images/logo.png" />
                     </a>
                 </div>
 
@@ -98,7 +98,7 @@
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="navbar-logo">
                 <a href="{{url("/")}}">
-                    <img src="../site/images/logo.png" />
+                    <img style="width: 170px;" src="../site/images/logo.png" />
                 </a>
             </div>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Alterna navegação">
@@ -144,7 +144,7 @@
 
                 <div class="navbar-logo">
                     <a href="{{url("/")}}">
-                        <img src="../site/images/logo.png" />
+                        <img style="width: 170px;" src="../site/images/logo.png" />
                     </a>
                 </div>
 
@@ -501,8 +501,9 @@
                                 </p>
                                 <form>
                                     <div class="email">
-                                        <input type="email" placeholder="Trabalhe conosco...">
-                                        <button type="submit"><i class="fa fa-send"></i></button>
+                                        <!-- <input onclick="trabalheconosco_link('mailto:{{ $quemsomos->email }}')" placeholder="Trabalhe conosco...">
+                                        <button href="mailto:{{ $quemsomos->email }}" onclick="trabalheconosco_link('mailto:{{ $quemsomos->email }}')"><i class="fa fa-send"></i></button> -->
+                                        <a href="mailto:{{ $quemsomos->email }}">Trabalhe conosco...<i class="fa fa-send"></i></a>
                                     </div>
                                 </form>
                                 <div class="socials">
@@ -564,12 +565,13 @@
         </form>
     </div>
 
-
-
 		</body>
 
     <script>
       function redirecionar(link) {
+        window.location.href = link;
+      }
+      function trabalheconosco_link(link) {
         window.location.href = link;
       }
     </script>
@@ -581,10 +583,5 @@
 
     <script src="../site/js/jquery.waypoints.min.js"></script>
     <script src="../site/js/jquery.countup.min.js"></script>
-
-
-
-
-
 
 </html>

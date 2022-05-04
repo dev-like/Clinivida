@@ -16,7 +16,7 @@ $("document").ready(function ($) {
     // fixed menu .navbar
     fixedMenu();
     function fixedMenu() {
-        if ($(window).innerWidth() >= 1200) {
+        if ($(window).innerWidth() >= 992) {
             if (window.pageYOffset >= 80) {
                 $(".header-middle").css({
                     "position": "fixed",
