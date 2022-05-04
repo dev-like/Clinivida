@@ -85,7 +85,10 @@ position: relative !important;
   border: 1px solid #fff;
   padding: 10px 5px 10px 12px;
   border-radius: 8px;
-  
+}
+
+.footer .container > div:last-child > .footer__top-blocks:nth-child(1) .content form a:hover {
+  background-color: #fff;
 }
 
 .footer .container > div:last-child > .footer__top-blocks:nth-child(1) .content form a i {

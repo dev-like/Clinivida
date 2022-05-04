@@ -7461,6 +7461,7 @@ a:hover {
   color: #ffffff;
   -webkit-transition: all 0.3s linear;
   transition: all 0.3s linear;
+  padding: 5px;
 }
 
 .footer .container > div > .footer__top-blocks a:hover {
@@ -7506,6 +7507,7 @@ a:hover {
   font-size: 16px;
   font-weight: bold;
   line-height: 1.3;
+  padding: 5px;
 }
 
 .footer .container > div > .footer__top-blocks .content .content-item .location {
@@ -7640,6 +7642,7 @@ a:hover {
 .footer .container > div:last-child > .footer__top-blocks:nth-child(2) .content .menu > li > a {
   font-family: "Montserrat Alternates Light";
   display: block;
+  padding: 5px;
 }
 
 .footer .container > div:last-child > .footer__top-blocks:nth-child(2) .content .menu > li > a .fa {
@@ -7667,6 +7670,18 @@ a:hover {
   margin: 0;
   color: #f0f0f0;
   text-align: center;
+}
+
+/* HOVER DOS LINKS */
+
+.footer__top-blocks .content .content-item .text a:hover {
+  background-color: #fff;
+  border-radius: 8px;
+}
+
+.footer .container > div:last-child > .footer__top-blocks:nth-child(2) .content .menu > li > a:hover {
+  background-color: #fff;
+  border-radius: 8px;
 }
 
 /**************************************************/

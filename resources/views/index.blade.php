@@ -148,11 +148,7 @@
                     </a>
                 </div>
 
-                
-
                 <div class="navbar">
-
-                    
 
                     <ul class="navbar__menu">
                         <li class="navbar__menu-item">
