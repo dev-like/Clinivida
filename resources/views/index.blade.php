@@ -332,7 +332,7 @@
             <div class="emergency-call-2__bg">
             </div>
             <div class="container">
-                <h1 class="section-title section-title_60 section-title_white">FAÇA SEU<br>CHECK-UP ANUAL</h1>
+                <h1 class="section-title section-title_60 section-title_white" style="line-height: 1.2;">FAÇA SEU<br>CHECK-UP ANUAL</h1>
                 <div class="checkup">
                   <div class="row">
                     <h5><i class="fa fa-check-circle"></i> Exames de sangue</h5>
