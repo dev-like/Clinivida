@@ -21245,4 +21245,21 @@ body {
     margin-right: 12px;
   }
 }
+
+/* CONVENIOS */ /* nathan */
+
+.seccao-convenios img {
+  border-radius: 10px;
+}
+
+.seccao-convenios .owl-stage-outer {
+  padding-top: 15px;
+}
+
+/* EQUIPE */ /* nathan */
+
+.seccao-equipe img {
+  border-radius: 10px;
+}
+
 /*# sourceMappingURL=main.css.map */

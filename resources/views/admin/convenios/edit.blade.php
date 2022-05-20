@@ -1,11 +1,11 @@
 @extends('admin.main')
 
 @section('page-title')
-    Editar convênio {{ $convenio->id }}
+    Editar parceiro e convênio {{ $convenio->id }}
 @endsection
 
 @section('page-caminho')
-    Convênio
+    Parceiro e Convênio
 @endsection
 
 @section('styles')
@@ -36,7 +36,7 @@
                         </div>
                         <div class="form-group col-md-6">
                           <label for="link">Link:</label>
-                          <input placeholder="Link do convênio" name="link"
+                          <input placeholder="Link do parceiro / convênio" name="link"
                                  class="form-control" autofocus required
                                  maxlength="250" type="url" value="{{ $convenio->link }}">
                         </div>

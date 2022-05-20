@@ -348,7 +348,7 @@
         </section>
         <div class="anchor" id="equipe" style="height: 60px; margin-top: -60px;"></div>
 
-        <section class="form" style="padding-top:470px; padding-bottom: 210px;">
+        <section class="form seccao-equipe" style="padding-top:470px; padding-bottom: 210px;">
           <div class="services" style="bottom:-73px; top:53px;">
 
             <div class="container" style="padding:0; justify-content: flex-start;">
@@ -377,12 +377,12 @@
         </section>
 
         <div class="anchor" id="convenio"></div>
-        <section class="form laranja" style="padding-top:470px">
+        <section class="form laranja seccao-convenios" style="padding-top:470px">
           <!-- Start of .header-bottom .services -->
           <div class="services" style="bottom:-73px; top:53px;">
 
             <div class="container" style="padding:0; justify-content: flex-start;">
-              <h3 style="color:#fff">Nossos convênios</h3>
+              <h3 style="color:#fff">Nossos parceiros e convênios</h3>
             </div>
               <div class="container">
                   <div class="services__items owl-carousel owl-theme exames">

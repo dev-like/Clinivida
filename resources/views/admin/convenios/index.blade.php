@@ -1,11 +1,11 @@
 @extends('admin.main')
 
 @section('page-title')
-    Convênios Cadastrados
+    Parceiros e Convênios Cadastrados
 @endsection
 
 @section('page-caminho')
-    Convênios
+    Parceiros e Convênios
 @endsection
 
 @section('styles')
@@ -50,7 +50,7 @@
                                     <i class="fa fa-pencil m-r-5"></i>
                                 </a>
                             </span>
-                            <span class="hint--top" aria-label="Deletar convenio">
+                            <span class="hint--top" aria-label="Deletar parceiro / convenio">
                                 <button type="button" onclick="goswet({{$convenio->id}})"
                                         style="border-radius: 50%"
                                         class="btn btn-danger waves-effect">
@@ -77,7 +77,7 @@
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
-                    <h4 class="modal-title">Cadastrar Convênio</h4>
+                    <h4 class="modal-title">Cadastrar Parceiro ou Convênio</h4>
                 </div>
                 <form enctype="multipart/form-data"
                       action="{{ route('convenios.store') }}"
@@ -93,7 +93,7 @@
                             </div>
                             <div class="form-group col-md-12">
                              <label for="link">Link:</label>
-                             <input placeholder="Link do convênio" name="link"
+                             <input placeholder="Link do parceiro ou convênio" name="link"
                                     class="form-control" autofocus required
                                     maxlength="250" type="url">
                             </div>
@@ -146,7 +146,7 @@
       reverseButtons: true
     })
     swal({
-        title: "Deseja excluir Convenio?",
+        title: "Deseja excluir Parceiro / Convenio?",
         type: "warning",
         showCancelButton: true,
         confirmButtonColor: "#DD6B55",
@@ -163,7 +163,7 @@
           },
           success: function(data){
             swal({
-             title: "Convenio deletado!",
+             title: "Parceiro / Convenio deletado!",
              type: "success",
              timer: 2000,
              showConfirmButton: false
